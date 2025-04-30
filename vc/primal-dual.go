@@ -1,7 +1,7 @@
-package main
+package vc
 
 import (
-	"fmt"
+	// "fmt"
 )
 
 // Hàm primal-dual vertex cover
@@ -31,23 +31,23 @@ func PrimalDualVertexCover(n int, edges []Edge) []int {
 	return result
 }
 
-// Hàm chính để chạy thử
-func main() {
-	// Số đỉnh
-	n := 5
-	// Danh sách cạnh (vô hướng)
-	edges := []Edge{
-		{0, 1},
-		{0, 2},
-		{1, 3},
-		{3, 4},
-	}
+// // Hàm chính để chạy thử
+// func main() {
+// 	// Số đỉnh
+// 	n := 5
+// 	// Danh sách cạnh (vô hướng)
+// 	edges := []Edge{
+// 		{0, 1},
+// 		{0, 2},
+// 		{1, 3},
+// 		{3, 4},
+// 	}
 
-	cover := PrimalDualVertexCover(n, edges)
+// 	cover := PrimalDualVertexCover(n, edges)
 
-	fmt.Println("Vertex Cover tìm được:")
-	for _, v := range cover {
-		fmt.Printf("%d ", v)
-	}
-	fmt.Println()
-}
+// 	fmt.Println("Vertex Cover tìm được:")
+// 	for _, v := range cover {
+// 		fmt.Printf("%d ", v)
+// 	}
+// 	fmt.Println()
+// }

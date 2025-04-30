@@ -1,6 +1,6 @@
-package main
+package vc
 
-import "fmt"
+// import "fmt"
 
 type Edge struct {
     u, v int
@@ -66,21 +66,21 @@ func copyMap(original map[int]bool) map[int]bool {
     return newMap
 }
 
-func main() {
-    edges := []Edge{
-        {0, 1},
-        {0, 2},
-        {1, 3},
-        {2, 3},
-    }
+// func main() {
+//     edges := []Edge{
+//         {0, 1},
+//         {0, 2},
+//         {1, 3},
+//         {2, 3},
+//     }
 
-    k := 2
-    covered := make(map[int]bool)
+//     k := 2
+//     covered := make(map[int]bool)
 
-    cover, result := VertexCover(edges, k, covered)
-    if result {
-        fmt.Println("Vertex cover:", cover)
-    } else {
-        fmt.Println("Không thể tìm vertex cover với kích thước <= k.")
-    }
-}
+//     cover, result := VertexCover(edges, k, covered)
+//     if result {
+//         fmt.Println("Vertex cover:", cover)
+//     } else {
+//         fmt.Println("Không thể tìm vertex cover với kích thước <= k.")
+//     }
+// }

@@ -1,12 +1,12 @@
-package main
+package vc
 
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
-type Edge struct {
-	u, v int
-}
+// type Edge struct {
+// 	u, v int
+// }
 
 // Đếm bậc của các đỉnh dựa trên danh sách cạnh
 func buildDegree(edges []Edge) map[int]int {
@@ -59,17 +59,17 @@ func GreedyVertexCover(edges []Edge) []int {
 	return result
 }
 
-// Ví dụ sử dụng
-func main() {
-	edges := []Edge{
-		{0, 1},
-		{0, 2},
-		{1, 3},
-		{2, 3},
-		{3, 4},
-		{4, 5},
-	}
+// // Ví dụ sử dụng
+// func main() {
+// 	edges := []Edge{
+// 		{0, 1},
+// 		{0, 2},
+// 		{1, 3},
+// 		{2, 3},
+// 		{3, 4},
+// 		{4, 5},
+// 	}
 
-	cover := GreedyVertexCover(edges)
-	fmt.Println("Vertex Cover:", cover)
-}
+// 	cover := GreedyVertexCover(edges)
+// 	fmt.Println("Vertex Cover:", cover)
+// }

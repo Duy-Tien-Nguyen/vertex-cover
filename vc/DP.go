@@ -1,9 +1,9 @@
-// package main
+package vc
 
-// import (
-// 	"fmt"
-// 	"math"
-// )
+import (
+	// "fmt"
+	"math"
+)
 
 // Hàm DFS
 func DFS(u int, tree [][]int, visited []bool, dp [][]int) {
@@ -46,16 +46,16 @@ func SolveVertexCoverFromEdges(n int, edges [][2]int, root int) int {
 }
 
 // Ví dụ sử dụng
-func main() {
-	n := 5
-	edges := [][2]int{
-		{0, 1},
-		{0, 2},
-		{1, 3},
-		{1, 4},
-	}
+// func main() {
+// 	n := 5
+// 	edges := [][2]int{
+// 		{0, 1},
+// 		{0, 2},
+// 		{1, 3},
+// 		{1, 4},
+// 	}
 
-	root := 0
-	result := SolveVertexCoverFromEdges(n, edges, root)
-	fmt.Println("Kích thước vertex cover nhỏ nhất là:", result)
-}
+// 	root := 0
+// 	result := SolveVertexCoverFromEdges(n, edges, root)
+// 	fmt.Println("Kích thước vertex cover nhỏ nhất là:", result)
+// }
