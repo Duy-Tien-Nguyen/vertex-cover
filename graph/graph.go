@@ -90,15 +90,44 @@ func (g *Graph) Edges() []Edge {
     return out
 }
 
+func (g *Graph) GetMaxDegree() int {
+    maxDegree := -1
+    maxVertex := -1
+    for v := 0; v < g.N; v++ {
+        if len(g.Adj[v]) > maxDegree {
+            maxDegree = len(g.Adj[v])
+            maxVertex = v
+        }
+    }
+    return maxVertex
+}
+
 func (g *Graph) Clone() *Graph{
     newGraph :=&Graph{
         N: g.N,
         Adj: make([][]int, g.N),
     }
     
-    for u,neighbors := range g.Adj{
-        newGraph.Adj[u] = make([]int, len(neighbors))
-        copy(newGraph.Adj[u], neighbors)
+    for i:=0;i<g.N;i++{
+        newGraph.Adj[i]=append([]int(nil), g.Adj[i]...)
     }
     return newGraph
+}
+
+
+func (g *Graph) RemoveVertex(v int) {
+    for u := 0; u < len(g.Adj); u++ {
+        if u == v {
+            continue
+        }
+        adj :=g.Adj[u]
+        for i:=0;i<len(adj);i++{
+            if adj[i]==v{
+                adj = append(adj[:i], adj[i+1:]...)
+                break
+            }
+        }
+        g.Adj[u] = adj
+    }
+    g.Adj[v] = nil
 }

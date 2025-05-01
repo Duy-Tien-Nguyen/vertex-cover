@@ -1,53 +1,53 @@
 package vc
 
-import (
-	// "fmt"
-)
+import ("vertex_cover/graph"
+"time")
 
-// Hàm primal-dual vertex cover
-func PrimalDualVertexCover(n int, edges []Edge) []int {
-	x := make([]int, n)                     // Biến primal: x[v] = 1 nếu v ∈ cover
-	y := make(map[Edge]int)                // Biến dual: y[e] = số lần cạnh e được "kích hoạt"
-	C := make(map[int]bool)                // Tập kết quả: vertex cover
-
-	for _, e := range edges {
-		u, v := e.u, e.v
-		// Nếu cả 2 đỉnh chưa nằm trong cover (x[u] = 0 và x[v] = 0)
-		if x[u] == 0 && x[v] == 0 {
-			y[e]++          // Tăng biến dual y[e]
-			x[u] = 1        // Đưa u vào cover
-			x[v] = 1        // Đưa v vào cover
-			C[u] = true
-			C[v] = true
-		}
-	}
-
-	// Chuyển tập C từ map về slice
-	result := []int{}
-	for v := range C {
+type PrimalDualSolver struct{}
+func (s *PrimalDualSolver) Name() string {
+	return "Primal-Dual"
+}
+func (s *PrimalDualSolver) Solve(g *graph.Graph) ([]int, time.Duration) {
+	start := time.Now()
+	cover := primalDualVertexCover(g)
+	duration := time.Since(start)
+	result := make([]int, 0, len(cover))
+	for v := range cover {
 		result = append(result, v)
 	}
-
-	return result
+	return result, duration
 }
 
-// // Hàm chính để chạy thử
-// func main() {
-// 	// Số đỉnh
-// 	n := 5
-// 	// Danh sách cạnh (vô hướng)
-// 	edges := []Edge{
-// 		{0, 1},
-// 		{0, 2},
-// 		{1, 3},
-// 		{3, 4},
-// 	}
+func primalDualVertexCover(G *graph.Graph) map[int]struct{} {
+    x := make(map[int]int)   // Biến primal, 0 = chưa chọn v
+    y := make(map[[2]int]int) // Biến dual
+    C := make(map[int]struct{}) // Tập vertex cover
 
-// 	cover := PrimalDualVertexCover(n, edges)
-
-// 	fmt.Println("Vertex Cover tìm được:")
-// 	for _, v := range cover {
-// 		fmt.Printf("%d ", v)
-// 	}
-// 	fmt.Println()
-// }
+    // Khởi tạo giá trị ban đầu cho x và y
+    for v := 0; v < G.N; v++ {
+        x[v] = 0 // chưa chọn v
+    }
+    for _, e := range G.Edges() {
+        y[[2]int{e.U, e.V}] = 0 // giá trị dual ban đầu là 0
+    }
+    // Lặp cho đến khi mọi cạnh được cover
+    for {
+        covered := true
+        for _, e := range G.Edges() {
+            u, v := e.U, e.V
+            if x[u] == 0 && x[v] == 0 {
+                // Cạnh (u,v) chưa được cover
+                y[[2]int{u, v}]++
+                x[u] = 1
+                x[v] = 1
+                C[u] = struct{}{}
+                C[v] = struct{}{}
+                covered = false
+            }
+        }
+        if covered {
+            break
+        }
+    }
+    return C
+}

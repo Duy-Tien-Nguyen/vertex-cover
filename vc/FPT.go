@@ -1,86 +1,153 @@
 package vc
 
-// import "fmt"
+import (
+    "time"
+    "vertex_cover/graph"
+)
 
-type Edge struct {
-    u, v int
-}
+type FPTSolver struct{}
 
-// Hàm kiểm tra xem liệu đồ thị G có thể có vertex cover với kích thước <= k không và trả về cover
-func VertexCover(edges []Edge, k int, covered map[int]bool) ([]int, bool) {
-    if len(edges) == 0 {
-        // Nếu không còn cạnh nào, trả về danh sách vertex cover rỗng
-        result := []int{}
-        for v := range covered {
-            result = append(result, v)
+func Kernelization(g *graph.Graph, k int) (*graph.Graph, map[int]struct{}, int) {
+    coverForced := make(map[int]struct{})
+    changed := true
+    for changed {
+        changed = false
+        // 1. Đỉnh cô lập
+        for v := 0; v < g.N; v++ {
+            if len(g.Adj[v]) == 0 {
+                g.RemoveVertex(v)
+                changed = true
+            }
         }
-        return result, true // Tìm được vertex cover hợp lệ
-    }
-
-    if k < 0 {
-        return nil, false // Nếu k < 0, không thể tìm được vertex cover hợp lệ
-    }
-
-    // Chọn một cạnh bất kỳ (u, v) từ danh sách cạnh
-    e := edges[0]
-    u, v := e.u, e.v
-
-    // Nhánh 1: Chọn u vào cover
-    newEdges := removeEdges(edges, u)
-    newCovered := copyMap(covered)
-    newCovered[u] = true
-    cover, found := VertexCover(newEdges, k-1, newCovered)
-    if found {
-        return cover, true
-    }
-
-    // Nhánh 2: Chọn v vào cover
-    newEdges = removeEdges(edges, v)
-    newCovered = copyMap(covered)
-    newCovered[v] = true
-    cover, found = VertexCover(newEdges, k-1, newCovered)
-    if found {
-        return cover, true
-    }
-
-    return nil, false
-}
-
-// Hàm xóa các cạnh kề với một đỉnh u
-func removeEdges(edges []Edge, u int) []Edge {
-    var result []Edge
-    for _, e := range edges {
-        if e.u != u && e.v != u {
-            result = append(result, e)
+        // 2. Đỉnh có bậc 1
+        for v := 0; v < g.N; v++ {
+            if len(g.Adj[v]) == 1 {
+                u := g.Adj[v][0]
+                coverForced[v] = struct{}{}
+                g.RemoveVertex(v)
+                g.RemoveVertex(u)
+                k--
+                changed = true
+            }
+        }
+        // 3. Đỉnh có bậc lớn hơn k
+        for v := 0; v < g.N; v++ {
+            if len(g.Adj[v]) > k {
+                coverForced[v] = struct{}{}
+                g.RemoveVertex(v)
+                k--
+                changed = true
+            }
         }
     }
-    return result
+    return g, coverForced, k
 }
 
-// Hàm sao chép bản đồ
-func copyMap(original map[int]bool) map[int]bool {
-    newMap := make(map[int]bool)
-    for k, v := range original {
-        newMap[k] = v
+func getMaxDegree(g *graph.Graph) int {
+    maxDegree := -1
+    maxVertex := -1
+    for v := 0; v < g.N; v++ {
+        if len(g.Adj[v]) > maxDegree {
+            maxDegree = len(g.Adj[v])
+            maxVertex = v
+        }
     }
-    return newMap
+    return maxVertex
 }
 
-// func main() {
-//     edges := []Edge{
-//         {0, 1},
-//         {0, 2},
-//         {1, 3},
-//         {2, 3},
-//     }
+func BranchAndBound(g *graph.Graph, coverCurr map[int]struct{}, kCurr int, bestCover map[int]struct{}, bestSize *int) {
+    if len(g.Edges()) == 0 {
+        if len(coverCurr) < *bestSize {
+            for k := range bestCover {
+                delete(bestCover, k)
+            }
+            for v := range coverCurr {
+                bestCover[v] = struct{}{}
+            }
+            *bestSize = len(coverCurr)
+        }
+        return
+    }
 
-//     k := 2
-//     covered := make(map[int]bool)
+    if kCurr <= 0 || len(coverCurr)+g.N <= *bestSize {
+        return
+    }
 
-//     cover, result := VertexCover(edges, k, covered)
-//     if result {
-//         fmt.Println("Vertex cover:", cover)
-//     } else {
-//         fmt.Println("Không thể tìm vertex cover với kích thước <= k.")
-//     }
-// }
+    v := getMaxDegree(g)
+
+    // Nhánh include v
+    G1 := g.Clone()
+    G1.RemoveVertex(v)
+    coverIncludeV := make(map[int]struct{}, len(coverCurr)+1)
+    for k := range coverCurr {
+        coverIncludeV[k] = struct{}{}
+    }
+    coverIncludeV[v] = struct{}{}
+    BranchAndBound(G1, coverIncludeV, kCurr-1, bestCover, bestSize)
+
+    // Nhánh exclude v
+    Nv := g.Adj[v]
+    G2 := g.Clone()
+    for _, neighbor := range Nv {
+        G2.RemoveVertex(neighbor)
+    }
+    coverExcludeV := make(map[int]struct{}, len(coverCurr)+len(Nv))
+    for k := range coverCurr {
+        coverExcludeV[k] = struct{}{}
+    }
+    for _, neighbor := range Nv {
+        coverExcludeV[neighbor] = struct{}{}
+    }
+    BranchAndBound(G2, coverExcludeV, kCurr-len(Nv), bestCover, bestSize)
+}
+
+func FindFPTMinimumVertexCover(g *graph.Graph) ([]int) {
+    n := g.N  // số lượng đỉnh trong đồ thị
+    low, high := 0, n // Tìm kiếm nhị phân trong khoảng [0, n]
+
+    // Bước 2: Tìm kiếm nhị phân trên giá trị k
+    bestCover :=make(map[int]struct{})
+    var bestSize int
+    var coverForced map[int]struct{}
+    for low <= high {
+        mid := (low + high) / 2
+        // Bước 3: Thử nghiệm với k = mid
+        gker, coverForced, k := Kernelization(g, mid)
+        BranchAndBound(gker, coverForced, k, bestCover, &bestSize)
+
+        // Cập nhật kết quả nếu cover nhỏ hơn hoặc bằng k
+        if len(bestCover) <= mid {
+            bestSize = len(bestCover)
+            high = mid - 1  // Tìm kiếm phần dưới
+        } else {
+            low = mid + 1  // Tìm kiếm phần trên
+        }
+    }
+
+    finalCover := make(map[int]struct{}, len(bestCover)+len(coverForced))
+    for v := range bestCover {
+        finalCover[v] = struct{}{}
+    }
+    for v := range coverForced {
+        finalCover[v] = struct{}{}
+    }
+
+    cover := make([]int, 0, len(finalCover))
+    for v := range finalCover {
+        cover = append(cover, v)
+    }
+
+    return cover
+}
+
+func (s *FPTSolver) Name() string {
+    return "FPT"
+}
+
+func (s *FPTSolver) Solve(g *graph.Graph) ([]int, time.Duration) {
+    start := time.Now()
+    cover := FindFPTMinimumVertexCover(g)
+    duration := time.Since(start)
+
+    return cover, duration
+}

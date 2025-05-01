@@ -1,75 +1,50 @@
 package vc
+import ("vertex_cover/graph"
+"time"
+)
 
-// import (
-// 	"fmt"
-// )
-
-// type Edge struct {
-// 	u, v int
-// }
-
-// Đếm bậc của các đỉnh dựa trên danh sách cạnh
-func buildDegree(edges []Edge) map[int]int {
-	degree := make(map[int]int)
-	for _, e := range edges {
-		degree[e.u]++
-		degree[e.v]++
-	}
-	return degree
+type GreedySolver struct{}
+func (s *GreedySolver) Name() string {
+	return "Greedy"
 }
 
-func GreedyVertexCover(edges []Edge) []int {
-	// Sao chép cạnh để xử lý mà không thay đổi đầu vào
-	E := make([]Edge, len(edges))
-	copy(E, edges)
+func GreedyVertexCover(g *graph.Graph) *BitMask {
+    cover := NewBitMask(g.N)
 
-	cover := make(map[int]bool)
-	for len(E) > 0 {
-		// Tính bậc các đỉnh hiện tại
-		degree := buildDegree(E)
+    for len(g.Edges()) > 0 {
+        maxDegree := -1
+        maxVertex := -1
+        for v := 0; v < g.N; v++ {
+            if len(g.Adj[v]) > maxDegree {
+                maxDegree = len(g.Adj[v])
+                maxVertex = v
+            }
+        }
 
-		// Tìm đỉnh có bậc cao nhất
-		var maxV int
-		maxDegree := -1
-		for v, d := range degree {
-			if d > maxDegree {
-				maxDegree = d
-				maxV = v
-			}
-		}
+        if maxVertex == -1 {
+            break 
+        }
+        // Thêm đỉnh vào cover
+        cover.Set(maxVertex)
+        g.RemoveVertex(maxVertex)
+    }
 
-		// Thêm đỉnh vào tập cover
-		cover[maxV] = true
-
-		// Xóa các cạnh kề với maxV
-		newE := []Edge{}
-		for _, e := range E {
-			if e.u != maxV && e.v != maxV {
-				newE = append(newE, e)
-			}
-		}
-		E = newE
-	}
-
-	// Chuyển cover từ map sang slice
-	result := []int{}
-	for v := range cover {
-		result = append(result, v)
-	}
-	return result
+    return cover
 }
 
-// // Ví dụ sử dụng
-// func main() {
-// 	edges := []Edge{
-// 		{0, 1},
-// 		{0, 2},
-// 		{1, 3},
-// 		{2, 3},
-// 		{3, 4},
-// 		{4, 5},
-// 	}
+func (s *GreedySolver) Solve(g *graph.Graph) ([]int, time.Duration) {
+	start := time.Now()
+	cover := GreedyVertexCover(g)
+	duration := time.Since(start)
 
-// 	cover := GreedyVertexCover(edges)
-// 	fmt.Println("Vertex Cover:", cover)
-// }
+	result := make([]int, 0)
+	for i := 0; i < g.N; i++ {
+		if cover.Get(i) {
+			result = append(result, i)
+		}
+	}
+
+	return result, duration
+}
+
+

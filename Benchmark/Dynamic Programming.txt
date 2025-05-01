@@ -1,0 +1,6 @@
+Dynamic Programming: Graph: data/tree_graph.txt, |C| = 7, time = 16.691µs
+Cover vertices: [5 6 18 15 10 19 2]
+
+Dynamic Programming: Graph: data/tree_graph.txt, |C| = 7, time = 76.5µs
+Cover vertices: [5 6 18 15 10 19 2]
+

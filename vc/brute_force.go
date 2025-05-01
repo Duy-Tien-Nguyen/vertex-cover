@@ -2,10 +2,9 @@
 package vc
 
 import (
-    // "flag"                  // Đã bị comment, cần dùng để đọc -i
-    // "fmt"
     "time"
-    "vertex_cover/graph"    // Đảm bảo đúng module path
+    "math/big"
+    "vertex_cover/graph"    
 )
 
 type BruteForceSolver struct{}
@@ -22,30 +21,36 @@ func isCover(mask *BitMask, g *graph.Graph) bool {
 }
 
 // BruteForceVertexCover thử tất cả subsets của {0..n-1}, trả về cover nhỏ nhất
-func BruteForceVertexCover(g *graph.Graph) *BitMask { // Fix: `Grapg` → `Graph`
+func BruteForceVertexCover(g *graph.Graph) *BitMask {
     n := g.N
     var bestCover *BitMask
     minSize := n+1
 
-    limit := 1 << n // 2^n
-    for i:=0; i<limit ; i++ {
-        bm:= NewBitMask(n)
-        for j:=0; j<n ;j++{
-            if (i>>j)&1==1{
-                bm.Set(j)
-            }
-        }
-        if isCover(bm, g) {
-            if bm.Count() < minSize {
-                minSize = bm.Count()
-                bestCover = bm.Clone()
-            }   
-        }     
-    }
-    if bestCover == nil {
-        bestCover = NewBitMask(n)
-    }
-    return bestCover
+    limit :=new(big.Int).Lsh(big.NewInt(1), uint(n)) // 2^n
+    i := new(big.Int)
+    one := big.NewInt(1)
+
+    for i.Cmp(limit) < 0 { // i < limit (so sánh big.Int)
+		bm := NewBitMask(n)
+		for j := 0; j < n; j++ {
+			// Check if the j-th bit of i is set
+			temp := new(big.Int).Set(i) // Create a copy of i
+			temp.Rsh(temp, uint(j))    // Right shift by j
+			bit := new(big.Int).And(temp, one)       // AND with 1
+
+			if bit.Cmp(one) == 0 { // if (i >> j) & 1 == 1
+				bm.Set(j)
+			}
+		}
+		if isCover(bm, g) {
+			if bm.Count() < minSize {
+				minSize = bm.Count()
+				bestCover = bm.Clone()
+			}
+		}
+		i.Add(i, one) // i++ (cộng big.Int)
+	}
+	return bestCover
 }
 
 

@@ -1,0 +1,39 @@
+MPA: Graph: data/tree_graph.txt, |C| = 11, time = 119.709µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9 10]
+
+MPA: Graph: data/tree_graph.txt, |C| = 11, time = 105.992µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9 10]
+
+MPA: Graph: data/tree_graph.txt, |C| = 8, time = 96.755µs
+Cover vertices: [0 1 2 3 4 5 6 7]
+
+MPA: Graph: data/tree_graph.txt, |C| = 10, time = 259.58µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+MPA: Graph: data/tree_graph.txt, |C| = 8, time = 124.24µs
+Cover vertices: [0 1 2 3 4 5 6 7]
+
+MPA: Graph: data/tree_graph.txt, |C| = 11, time = 138.046µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9 10]
+
+MPA: Graph: data/tree_graph.txt, |C| = 10, time = 114.854µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+MPA: Graph: data/tree_graph.txt, |C| = 8, time = 135.459µs
+Cover vertices: [0 1 2 3 4 5 6 7]
+
+MPA: Graph: data/tree_graph.txt, |C| = 11, time = 179.191µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9 10]
+
+MPA: Graph: data/tree_graph.txt, |C| = 9, time = 200.642µs
+Cover vertices: [0 1 2 3 4 5 6 7 8]
+
+MPA: Graph: data/tree_graph.txt, |C| = 7, time = 163.376µs
+Cover vertices: [0 1 2 3 4 5 6]
+
+MPA: Graph: data/tree_graph.txt, |C| = 10, time = 176.448µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+MPA: Graph: data/tree_graph.txt, |C| = 10, time = 126.004µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+

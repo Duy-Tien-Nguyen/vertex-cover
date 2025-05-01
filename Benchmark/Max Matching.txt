@@ -1,0 +1,9 @@
+Max Matching: Graph: data/tree_graph.txt, |C| = 10, time = 39.021µs
+Cover vertices: [16 7 11 8 15 1 2 3 6 0]
+
+Max Matching: Graph: data/tree_graph.txt, |C| = 10, time = 29.261µs
+Cover vertices: [0 1 2 3 11 6 16 7 8 15]
+
+Max Matching: Graph: data/tree_graph.txt, |C| = 10, time = 85.962µs
+Cover vertices: [15 2 3 6 7 11 8 0 1 16]
+

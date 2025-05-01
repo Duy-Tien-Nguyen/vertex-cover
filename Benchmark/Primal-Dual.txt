@@ -1,0 +1,6 @@
+Primal-Dual: Graph: data/tree_graph.txt, |C| = 10, time = 35.566µs
+Cover vertices: [1 6 11 0 2 3 16 7 8 15]
+
+Primal-Dual: Graph: data/tree_graph.txt, |C| = 10, time = 179.789µs
+Cover vertices: [3 16 7 11 1 2 6 8 15 0]
+

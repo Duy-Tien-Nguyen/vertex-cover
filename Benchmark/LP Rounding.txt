@@ -1,0 +1,57 @@
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 535.483µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 555.265µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 645.517µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 618.758µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 613.028µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 495.359µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 543.133µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 582.7µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 584.444µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 607.199µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 596.373µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 604.667µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 667.658µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 596.213µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 603.976µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 585.852µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 574.549µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 555.898µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+
+LP Rounding: Graph: data/tree_graph.txt, |C| = 10, time = 760.197µs
+Cover vertices: [0 1 2 3 4 5 6 7 8 9]
+

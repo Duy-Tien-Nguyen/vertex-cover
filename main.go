@@ -9,7 +9,8 @@ import (
 )
 
 func main() {
-    graphName := "data/johnson8-2-4.txt"
+    // graphName := "data/johnson8-2-4.txt"
+    graphName := "data/tree_graph.txt"
     g, err := graph.ParseEdgeList(graphName)
     if err != nil {
         panic(err)
@@ -26,7 +27,14 @@ func main() {
     fmt.Println("Tổng số cạnh (undirected) =", edgeCount/2)
 
     solvers := []vc.Solver{
-        &vc.BruteForceSolver{},
+        // &vc.BruteForceSolver{},
+        // &vc.DynamicProgrammingSolver{},
+        // &vc.FPTSolver{},
+        // &vc.GreedySolver{},
+        // &vc.PrimalDualSolver{},
+        // &vc.MaxMatchingSolver{},
+        // &vc.LP_RoundingSolver{},
+        &vc.MPA_Solver{},
     }  
     var wg sync.WaitGroup  
     for _, solver := range solvers {
