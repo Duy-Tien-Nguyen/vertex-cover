@@ -1,0 +1,3 @@
+ACO: Graph: data/tree_graph.txt, |C| = 7, time = 23.345457ms
+Cover vertices: [0 1 2 3 4 5 6]
+

@@ -103,6 +103,11 @@ func (bm *BitMask) ShiftRight(k int) {
 	copy(bm.data, newMask.data)
 }
 
+// Toggle flips bit i
+func (bm *BitMask) Toggle(i int) {
+	bm.data[i/64] ^= 1 << uint(i%64)
+}
+
 func (bm *BitMask) Print() {
 	var sb strings.Builder
 	for i := 0; i < bm.n; i++ {

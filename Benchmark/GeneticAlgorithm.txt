@@ -1,0 +1,18 @@
+GeneticAlgorithm: Graph: data/tree_graph.txt, |C| = 7, time = 1.02156967s
+Cover vertices: [3 5 8 12 13 16 17]
+
+GeneticAlgorithm: Graph: data/tree_graph.txt, |C| = 4, time = 1.019591673s
+Cover vertices: [1 8 16 18]
+
+GeneticAlgorithm: Graph: data/tree_graph.txt, |C| = 6, time = 925.318154ms
+Cover vertices: [8 12 14 15 18 19]
+
+GeneticAlgorithm: Graph: data/tree_graph.txt, |C| = 4, time = 924.378763ms
+Cover vertices: [7 14 18 19]
+
+GeneticAlgorithm: Graph: data/tree_graph.txt, |C| = 6, time = 935.433372ms
+Cover vertices: [0 11 12 15 16 18]
+
+GeneticAlgorithm: Graph: data/tree_graph.txt, |C| = 7, time = 985.634207ms
+Cover vertices: [1 2 3 8 11 13 16]
+

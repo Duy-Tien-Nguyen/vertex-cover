@@ -1,8 +1,7 @@
 package vc
 
 import ("vertex_cover/graph"
-	 "gonum.org/v1/gonum/optimize/convex/lp"
-	 "gonum.org/v1/gonum/mat"
+	"github.com/lukpank/go-glpk/glpk"
 	 "log"
 	 "math/rand"
 	"time")
@@ -24,36 +23,45 @@ func (s *LP_RoundingSolver) Solve(g *graph.Graph) ([]int, time.Duration) {
 
 
 func LPRounding(G *graph.Graph) []int {
-	edges:= G.Edges()
-	n:= G.N
+    edges := G.Edges()
+    n := G.N
+    m := len(edges)
 
-	c:= make([]float64, n)
-	for i := 0; i < n; i++ {
-		c[i] = 1
-	}
+    prob := glpk.New()
+    defer prob.Delete()
 
-	A:=mat.NewDense((len(edges)), n, nil)
-	b:=make([]float64, len(edges))
-	for i, edge := range edges {
-		u := edge.U
-		v := edge.V
-		A.Set(i, u, 1)
-		A.Set(i, v, 1)
-		b[i] = 1
-	}
+    // 2) Thêm n biến x1..xn, 0 ≤ xi ≤ 1, objective: min Σ xi
+    prob.AddCols(int(n))
+    for i := int(1); i <= int(n); i++ {
+        prob.SetColBnds(i, glpk.DB, 0.0, 1.0) // DB = double-bounded
+        prob.SetObjCoef(i, 1.0)              // min Σ xi
+    }
+    prob.SetObjDir(glpk.MIN)
 
-	_, x, err:= lp.Simplex(c, A, b, 1e-6, nil)
-	if err != nil {
-		log.Fatalf("LPRounding LP solver failed: %v", err)
-	}
+    // 3) Thêm m ràng buộc: x_u + x_v ≥ 1
+    prob.AddRows(int(m))
+    for i, e := range edges {
+        rid := int(i + 1)
+        // thiết lập bnds: LO = lower-bound; x_u + x_v ≥ 1
+        prob.SetRowBnds(rid, glpk.LO, 1.0, 0.0)
+        // gán hệ số tại row rid: xi và xj
+        idx := []int32{int32(e.U + 1), int32(e.V + 1)}
+        val := []float64{1.0, 1.0}
+        prob.SetMatRow(rid, idx, val)
+    }
 
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	var cover []int
-	for v:=0;v<G.N;v++{
-		randomValue:=r.Float64()
-		if randomValue<=x[v]{
-			cover= append(cover, v)
-		}
-	}
-	return cover
+    // 4) Giải LP bằng Simplex
+    if err := prob.Simplex(nil); err != nil {
+        log.Fatalf("GLPK Simplex failed: %v", err)
+    }
+    // 5) Randomized Rounding
+    rnd := rand.New(rand.NewSource(time.Now().UnixNano()))
+    cover := make([]int, 0, n)
+    for i := int(1); i <= int(n); i++ {
+        xi := prob.ColPrim(i) // nghiệm xi ∈ [0,1]
+        if rnd.Float64() <= xi {
+            cover = append(cover, int(i-1)) // chuyển về 0-based
+        }
+    }
+    return cover
 }

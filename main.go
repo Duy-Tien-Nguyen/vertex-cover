@@ -10,6 +10,7 @@ import (
 
 func main() {
     // graphName := "data/johnson8-2-4.txt"
+    // graphName := "data/C250-9.txt"
     graphName := "data/tree_graph.txt"
     g, err := graph.ParseEdgeList(graphName)
     if err != nil {
@@ -29,12 +30,14 @@ func main() {
     solvers := []vc.Solver{
         // &vc.BruteForceSolver{},
         // &vc.DynamicProgrammingSolver{},
-        // &vc.FPTSolver{},
+        &vc.FPTSolver{},
         // &vc.GreedySolver{},
         // &vc.PrimalDualSolver{},
         // &vc.MaxMatchingSolver{},
         // &vc.LP_RoundingSolver{},
-        &vc.MPA_Solver{},
+        // &vc.MPA_Solver{},
+        // &vc.ACO{},
+        // &vc.GASolver{},
     }  
     var wg sync.WaitGroup  
     for _, solver := range solvers {

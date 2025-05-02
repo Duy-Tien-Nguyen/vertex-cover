@@ -1,153 +1,215 @@
 package vc
 
 import (
-    "time"
-    "vertex_cover/graph"
+	"time"
+	"vertex_cover/graph"
 )
 
 type FPTSolver struct{}
 
-func Kernelization(g *graph.Graph, k int) (*graph.Graph, map[int]struct{}, int) {
-    coverForced := make(map[int]struct{})
-    changed := true
-    for changed {
-        changed = false
-        // 1. Đỉnh cô lập
-        for v := 0; v < g.N; v++ {
-            if len(g.Adj[v]) == 0 {
-                g.RemoveVertex(v)
-                changed = true
-            }
-        }
-        // 2. Đỉnh có bậc 1
-        for v := 0; v < g.N; v++ {
-            if len(g.Adj[v]) == 1 {
-                u := g.Adj[v][0]
-                coverForced[v] = struct{}{}
-                g.RemoveVertex(v)
-                g.RemoveVertex(u)
-                k--
-                changed = true
-            }
-        }
-        // 3. Đỉnh có bậc lớn hơn k
-        for v := 0; v < g.N; v++ {
-            if len(g.Adj[v]) > k {
-                coverForced[v] = struct{}{}
-                g.RemoveVertex(v)
-                k--
-                changed = true
-            }
-        }
-    }
-    return g, coverForced, k
+func Kernelization(g *graph.Graph, k int) (*graph.Graph, map[int]struct{}, int, map[int]int) {
+	coverForced := make(map[int]struct{})
+	origToNew := make(map[int]int)
+	remaining := make([]int, 0)
+
+	for i := 0; i < g.N; i++ {
+		remaining = append(remaining, i)
+	}
+
+	changed := true
+	for changed {
+		changed = false
+		for v := 0; v < g.N; v++ {
+			if len(g.Adj[v]) == 0 {
+				g.RemoveVertex(v)
+				changed = true
+			}
+		}
+		for v := 0; v < g.N; v++ {
+			if len(g.Adj[v]) == 1 {
+				u := g.Adj[v][0]
+				coverForced[v] = struct{}{}
+				g.RemoveVertex(v)
+				g.RemoveVertex(u)
+				k--
+				changed = true
+			}
+		}
+		for v := 0; v < g.N; v++ {
+			if len(g.Adj[v]) > k {
+				coverForced[v] = struct{}{}
+				g.RemoveVertex(v)
+				k--
+				changed = true
+			}
+		}
+	}
+
+	// Tạo lại map từ đỉnh ban đầu -> vị trí trong graph sau kernel hóa
+	newID := 0
+	for v := 0; v < len(g.Adj); v++ {
+		if len(g.Adj[v]) >0 {
+			origToNew[v] = newID
+			newID++
+		}
+	}
+
+	return g, coverForced, k, origToNew
 }
 
-func getMaxDegree(g *graph.Graph) int {
-    maxDegree := -1
-    maxVertex := -1
-    for v := 0; v < g.N; v++ {
-        if len(g.Adj[v]) > maxDegree {
-            maxDegree = len(g.Adj[v])
-            maxVertex = v
-        }
-    }
-    return maxVertex
+
+func graphToMasks(g *graph.Graph) []*BitMask {
+	n := g.N
+	masks := make([]*BitMask, n)
+	for u := 0; u < n; u++ {
+		masks[u] = NewBitMask(n)
+		for _, v := range g.Adj[u] {
+			masks[u].Set(v)
+		}
+	}
+	return masks
 }
 
-func BranchAndBound(g *graph.Graph, coverCurr map[int]struct{}, kCurr int, bestCover map[int]struct{}, bestSize *int) {
-    if len(g.Edges()) == 0 {
-        if len(coverCurr) < *bestSize {
-            for k := range bestCover {
-                delete(bestCover, k)
+var bbBestSize int
+var bbBestCover *BitMask
+
+// Xóa đỉnh khỏi bitmask (để loại khỏi consideration)
+func removeVertex(masks []*BitMask, v int) {
+	for u := range masks {
+		if masks[u].Get(v) {
+			masks[u].Unset(v)
+		}
+	}
+	masks[v] = NewBitMask(len(masks))
+}
+
+// Kiểm tra còn cạnh nào không
+func hasEdge(masks []*BitMask) bool {
+	for _, m := range masks {
+		if m.Count() > 0 {
+			return true
+		}
+	}
+	return false
+}
+
+// Chọn một cạnh tùy ý (u,v) để phân nhánh
+func pickEdge(masks []*BitMask) (int, int) {
+	n := len(masks)
+	for u := 0; u < n; u++ {
+		block := masks[u]
+		if block.Count() > 0 {
+			for v := 0; v < block.n; v++ {
+				if block.Get(v) {
+					return u, v
+				}
+			}
+		}
+	}
+	return -1, -1
+}
+
+// Greedy Matching để ước lượng lower bound
+func matchingLB(masks []*BitMask) int {
+	tmp := make([]*BitMask, len(masks))
+	for i, m := range masks {
+		tmp[i] = m.Clone()
+	}
+	count := 0
+	for {
+		u, v := pickEdge(tmp)
+		if u < 0 {
+			break
+		}
+		count++
+		removeVertex(tmp, u)
+		removeVertex(tmp, v)
+	}
+	return count
+}
+
+// Hàm đệ quy branch-and-bound
+func dfsMask(masks []*BitMask, cover *BitMask, k int) {
+	currSize := cover.Count()
+	if currSize >= bbBestSize || currSize > k {
+		return
+	}
+	lb := matchingLB(masks)
+	if currSize+lb >= bbBestSize {
+		return
+	}
+	if !hasEdge(masks) {
+		bbBestSize = currSize
+		bbBestCover = cover.Clone()
+		return
+	}
+	u, v := pickEdge(masks)
+	// Nhánh chọn u
+	masks1 := make([]*BitMask, len(masks))
+	for i := range masks { masks1[i] = masks[i].Clone() }
+	cover1 := cover.Clone()
+	cover1.Set(u)
+	removeVertex(masks1, u)
+	dfsMask(masks1, cover1, k)
+	// Nhánh chọn v
+	masks2 := make([]*BitMask, len(masks))
+	for i := range masks { masks2[i] = masks[i].Clone() }
+	cover2 := cover.Clone()
+	cover2.Set(v)
+	removeVertex(masks2, v)
+	dfsMask(masks2, cover2, k)
+}
+
+// Chạy B&B trên bitmask, với đỉnh bị ép buộc và k ban đầu
+func solveBBMask(masks []*BitMask, coverForced *BitMask, k int) (*BitMask, int) {
+	bbBestSize = coverForced.Count()
+	bbBestCover = coverForced.Clone()
+	dfsMask(masks, coverForced.Clone(), k)
+	return bbBestCover, bbBestSize
+}
+
+// Hàm chính để tìm Vertex Cover nhỏ nhất bằng FPT
+func FindFPTMinimumVertexCover(g *graph.Graph) []int {
+	n := g.N
+	low, high := 0, n
+	var globalCover *BitMask
+	globalSize := n + 1
+	// tìm nhị phân trên kích thước k
+	for low <= high {
+		mid := (low + high) / 2
+		gker, coverForcedMap, kRemain, origToNew := Kernelization(g.Clone(), mid)
+		masks:= graphToMasks(gker)
+		forcedMask := NewBitMask(n)
+		for v := range coverForcedMap {
+            if newV, ok := origToNew[v]; ok {
+                forcedMask.Set(newV)
             }
-            for v := range coverCurr {
-                bestCover[v] = struct{}{}
-            }
-            *bestSize = len(coverCurr)
         }
-        return
-    }
-
-    if kCurr <= 0 || len(coverCurr)+g.N <= *bestSize {
-        return
-    }
-
-    v := getMaxDegree(g)
-
-    // Nhánh include v
-    G1 := g.Clone()
-    G1.RemoveVertex(v)
-    coverIncludeV := make(map[int]struct{}, len(coverCurr)+1)
-    for k := range coverCurr {
-        coverIncludeV[k] = struct{}{}
-    }
-    coverIncludeV[v] = struct{}{}
-    BranchAndBound(G1, coverIncludeV, kCurr-1, bestCover, bestSize)
-
-    // Nhánh exclude v
-    Nv := g.Adj[v]
-    G2 := g.Clone()
-    for _, neighbor := range Nv {
-        G2.RemoveVertex(neighbor)
-    }
-    coverExcludeV := make(map[int]struct{}, len(coverCurr)+len(Nv))
-    for k := range coverCurr {
-        coverExcludeV[k] = struct{}{}
-    }
-    for _, neighbor := range Nv {
-        coverExcludeV[neighbor] = struct{}{}
-    }
-    BranchAndBound(G2, coverExcludeV, kCurr-len(Nv), bestCover, bestSize)
+		bestMask, size := solveBBMask(masks, forcedMask, kRemain)
+		if size <= mid {
+			globalCover = bestMask.Clone()
+			globalSize = size
+			high = mid - 1
+		} else {
+			low = mid + 1
+		}
+	}
+	res := make([]int, 0, globalSize)
+	for v := 0; v < n; v++ {
+		if globalCover.Get(v) {
+			res = append(res, v)
+		}
+	}
+	return res
 }
 
-func FindFPTMinimumVertexCover(g *graph.Graph) ([]int) {
-    n := g.N  // số lượng đỉnh trong đồ thị
-    low, high := 0, n // Tìm kiếm nhị phân trong khoảng [0, n]
-
-    // Bước 2: Tìm kiếm nhị phân trên giá trị k
-    bestCover :=make(map[int]struct{})
-    var bestSize int
-    var coverForced map[int]struct{}
-    for low <= high {
-        mid := (low + high) / 2
-        // Bước 3: Thử nghiệm với k = mid
-        gker, coverForced, k := Kernelization(g, mid)
-        BranchAndBound(gker, coverForced, k, bestCover, &bestSize)
-
-        // Cập nhật kết quả nếu cover nhỏ hơn hoặc bằng k
-        if len(bestCover) <= mid {
-            bestSize = len(bestCover)
-            high = mid - 1  // Tìm kiếm phần dưới
-        } else {
-            low = mid + 1  // Tìm kiếm phần trên
-        }
-    }
-
-    finalCover := make(map[int]struct{}, len(bestCover)+len(coverForced))
-    for v := range bestCover {
-        finalCover[v] = struct{}{}
-    }
-    for v := range coverForced {
-        finalCover[v] = struct{}{}
-    }
-
-    cover := make([]int, 0, len(finalCover))
-    for v := range finalCover {
-        cover = append(cover, v)
-    }
-
-    return cover
-}
-
-func (s *FPTSolver) Name() string {
-    return "FPT"
-}
+func (s *FPTSolver) Name() string { return "FPT" }
 
 func (s *FPTSolver) Solve(g *graph.Graph) ([]int, time.Duration) {
-    start := time.Now()
-    cover := FindFPTMinimumVertexCover(g)
-    duration := time.Since(start)
-
-    return cover, duration
+	start := time.Now()
+	cover := FindFPTMinimumVertexCover(g)
+	duration := time.Since(start)
+	return cover, duration
 }
+
+
