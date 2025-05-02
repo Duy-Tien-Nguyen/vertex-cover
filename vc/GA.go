@@ -23,10 +23,10 @@ func (g *GASolver) Solve(graph *graph.Graph) ([]int, time.Duration) {
 	n := graph.N
 	// Default parameters if zero
 	if g.PopSize == 0 {
-		g.PopSize = max(50, n/2)
+		g.PopSize = max(50, n/5)
 	}
 	if g.Generations == 0 {
-		g.Generations = max(100, n)
+		g.Generations = max(100, n/5)
 	}
 	if g.TournamentK == 0 {
 		g.TournamentK = max(3, n/20)
@@ -75,16 +75,22 @@ func (g *GASolver) Solve(graph *graph.Graph) ([]int, time.Duration) {
 		}
 		// 2.7 Evaluate new population
 		newFit := make([]float64, len(newPop))
+		bestNewIdx := 0
+		bestNewFit := 0.0
 		for i, ind := range newPop {
 			newFit[i] = evaluateFitness(ind, graph)
+			if newFit[i] > bestNewFit {
+				bestNewFit = newFit[i]
+				bestNewIdx = i
+			}
 		}
 		// 2.8 Update best
-		bestIdx := argMax(newFit)
-		if newFit[bestIdx] > evaluateFitness(best, graph) {
-			best = newPop[bestIdx].Clone()
+		if bestNewFit > evaluateFitness(best, graph) {
+			best = newPop[bestNewIdx].Clone()
 		}
-		// 2.9 Replace population
-		newPop[argMax(newFit)]= best.Clone()
+		// 2.9 Elitism: replace worst with best
+		worstIdx := argMin(newFit)
+		newPop[worstIdx] = best.Clone()
 		pop = newPop
 		fitness = newFit
 	}
@@ -119,13 +125,13 @@ func generateInitialPopulation(size, n int) []*BitMask {
 // evaluateFitness returns fitness = 1/|cover| (maximizing)
 func evaluateFitness(ind *BitMask, graph *graph.Graph) float64 {
 	edges := graph.Edges()
-    for _, e := range edges {
-        if !ind.Get(e.U) && !ind.Get(e.V) {
-            return 0.0
-        }
-    }
-    c := ind.Count()
-    return 1.0 / float64(c) // càng ít đỉnh càng tốt
+	for _, e := range edges {
+		if !ind.Get(e.U) && !ind.Get(e.V) {
+			return 0.0
+		}
+	}
+	c := ind.Count()
+	return 1.0 / float64(c) // càng ít đỉnh càng tốt
 }
 
 // tournamentSelect picks best of k random individuals
@@ -151,11 +157,19 @@ func crossover(p1, p2 *BitMask, pc float64) (*BitMask, *BitMask) {
 	c2 := NewBitMask(n)
 	for i := 0; i < n; i++ {
 		if i < cut {
-			if p1.Get(i) { c1.Set(i) }
-			if p2.Get(i) { c2.Set(i) }
+			if p1.Get(i) {
+				c1.Set(i)
+			}
+			if p2.Get(i) {
+				c2.Set(i)
+			}
 		} else {
-			if p2.Get(i) { c1.Set(i) }
-			if p1.Get(i) { c2.Set(i) }
+			if p2.Get(i) {
+				c1.Set(i)
+			}
+			if p1.Get(i) {
+				c2.Set(i)
+			}
 		}
 	}
 	return c1, c2
@@ -193,9 +207,14 @@ func greedyRemoveLS(ind *BitMask, graph *graph.Graph) {
 			valid := true
 			edges := graph.Edges()
 			for _, e := range edges {
-				if !ind.Get(e.U) && !ind.Get(e.V) { valid = false; break }
+				if !ind.Get(e.U) && !ind.Get(e.V) {
+					valid = false
+					break
+				}
 			}
-			if !valid { ind.Set(v) }
+			if !valid {
+				ind.Set(v)
+			}
 		}
 	}
 }
@@ -209,9 +228,12 @@ func memeticBitFlipLS(ind *BitMask, graph *graph.Graph) {
 		for v := 0; v < ind.n; v++ {
 			ind.Toggle(v)
 			valid := true
-			edges:= graph.Edges()
+			edges := graph.Edges()
 			for _, e := range edges {
-				if !ind.Get(e.U) && !ind.Get(e.V) { valid = false; break }
+				if !ind.Get(e.U) && !ind.Get(e.V) {
+					valid = false
+					break
+				}
 			}
 			if valid && ind.Count() < prevCount {
 				improved = true
@@ -227,6 +249,17 @@ func argMax(arr []float64) int {
 	best := 0
 	for i := 1; i < len(arr); i++ {
 		if arr[i] > arr[best] {
+			best = i
+		}
+	}
+	return best
+}
+
+// argMin returns index of min element
+func argMin(arr []float64) int {
+	best := 0
+	for i := 1; i < len(arr); i++ {
+		if arr[i] < arr[best] {
 			best = i
 		}
 	}

@@ -1,0 +1,17 @@
+Hill Climbing: Graph: data/tree_graph.txt, |C| = 7, time = 1.841748ms
+Cover vertices: [0 1 2 3 4 5 6]
+
+Hill Climbing: Graph: data/C250-9.txt, |C| = 247, time = 2.489170174s
+
+Hill Climbing: Graph: data/johnson8-2-4.txt, |C| = 21, time = 5.075689ms
+
+Hill Climbing: Graph: data/johnson8-2-4.txt, |C| = 21, time = 5.278888ms
+
+Hill Climbing: Graph: data/C250-9.txt, |C| = 247, time = 1.498108581s
+
+Hill Climbing: Graph: data/C500-9.txt, |C| = 498, time = 6.47272079s
+
+Hill Climbing: Graph: data/C500-9.txt, |C| = 498, time = 5.926959102s
+
+Hill Climbing: Graph: data/C500-9.txt, |C| = 498, time = 5.972244896s
+

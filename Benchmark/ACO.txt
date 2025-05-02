@@ -1,3 +1,20 @@
 ACO: Graph: data/tree_graph.txt, |C| = 7, time = 23.345457ms
 Cover vertices: [0 1 2 3 4 5 6]
 
+ACO: Graph: data/tree_graph.txt, |C| = 7, time = 28.477622ms
+Cover vertices: [0 1 2 3 4 5 6]
+
+ACO: Graph: data/tree_graph.txt, |C| = 7, time = 26.440876ms
+Cover vertices: [0 1 2 3 4 5 6]
+
+ACO: Graph: data/tree_graph.txt, |C| = 7, time = 27.932488ms
+Cover vertices: [0 1 2 3 4 5 6]
+
+ACO: Graph: data/tree_graph.txt, |C| = 7, time = 25.729609ms
+Cover vertices: [0 1 2 3 4 5 6]
+
+ACO: Graph: data/tree_graph.txt, |C| = 7, time = 20.05637ms
+Cover vertices: [0 1 2 3 4 5 6]
+
+ACO: Graph: data/johnson8-2-4.txt, |C| = 21, time = 1.819205445s
+

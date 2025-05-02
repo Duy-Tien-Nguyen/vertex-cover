@@ -16,3 +16,20 @@ Cover vertices: [0 11 12 15 16 18]
 GeneticAlgorithm: Graph: data/tree_graph.txt, |C| = 7, time = 985.634207ms
 Cover vertices: [1 2 3 8 11 13 16]
 
+GeneticAlgorithm: Graph: data/tree_graph.txt, |C| = 7, time = 953.402095ms
+Cover vertices: [1 2 3 7 15 16 17]
+
+GeneticAlgorithm: Graph: data/tree_graph.txt, |C| = 7, time = 932.740893ms
+Cover vertices: [1 2 3 7 15 16 17]
+
+GeneticAlgorithm: Graph: data/tree_graph.txt, |C| = 7, time = 967.879517ms
+Cover vertices: [1 2 3 11 13 15 16]
+
+GeneticAlgorithm: Graph: data/tree_graph.txt, |C| = 7, time = 965.947604ms
+Cover vertices: [0 1 3 7 8 16 17]
+
+GeneticAlgorithm: Graph: data/tree_graph.txt, |C| = 7, time = 956.185247ms
+Cover vertices: [1 2 3 11 13 15 16]
+
+GeneticAlgorithm: Graph: data/johnson8-2-4.txt, |C| = 21, time = 17.019309697s
+

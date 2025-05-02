@@ -1,4 +1,5 @@
 package main
+// package vc
 
 import (
     "vertex_cover/graph"
@@ -11,7 +12,12 @@ import (
 func main() {
     // graphName := "data/johnson8-2-4.txt"
     // graphName := "data/C250-9.txt"
-    graphName := "data/tree_graph.txt"
+    // graphName := "data/C500-9.txt"
+    graphName := "data/C1000-9.txt"
+    // graphName := "data/C2000-9.txt"
+    // graphName := "data/C4000-5.txt"
+    // graphName := "data/tree_graph_10000.txt"
+    // graphName := "data/tree_graph.txt"
     g, err := graph.ParseEdgeList(graphName)
     if err != nil {
         panic(err)
@@ -30,14 +36,15 @@ func main() {
     solvers := []vc.Solver{
         // &vc.BruteForceSolver{},
         // &vc.DynamicProgrammingSolver{},
-        &vc.FPTSolver{},
-        // &vc.GreedySolver{},
-        // &vc.PrimalDualSolver{},
-        // &vc.MaxMatchingSolver{},
-        // &vc.LP_RoundingSolver{},
-        // &vc.MPA_Solver{},
+        // &vc.FPTSolver{},
+        &vc.GreedySolver{},
+        &vc.PrimalDualSolver{},
+        &vc.MaxMatchingSolver{},
+        &vc.LP_RoundingSolver{},
+        &vc.MPA_Solver{},
         // &vc.ACO{},
         // &vc.GASolver{},
+        &vc.HC_Solver{},
     }  
     var wg sync.WaitGroup  
     for _, solver := range solvers {
@@ -53,8 +60,8 @@ func main() {
             }
             defer f.Close()
             if _, err := fmt.Fprintf(f,
-                "%s: Graph: %s, |C| = %d, time = %s\nCover vertices: %v\n\n",
-                solver.Name(), graphName, len(cover), duration, cover,
+                "%s: Graph: %s, |C| = %d, time = %s\n\n",
+                solver.Name(), graphName, len(cover), duration,
             ); err != nil {
                 panic(err)
             }

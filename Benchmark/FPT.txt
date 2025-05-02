@@ -1,0 +1,14 @@
+FPT: Graph: data/tree_graph.txt, |C| = 0, time = 52.16µs
+Cover vertices: []
+
+FPT: Graph: data/tree_graph.txt, |C| = 1, time = 54.375µs
+Cover vertices: [3]
+
+FPT: Graph: data/tree_graph.txt, |C| = 7, time = 77.288µs
+Cover vertices: [15 7 11 2 3 1 16]
+
+FPT: Graph: data/tree_graph.txt, |C| = 7, time = 132.603µs
+Cover vertices: [7 11 2 3 1 16 15]
+
+FPT: Graph: data/johnson8-2-4.txt, |C| = 21, time = 1m16.139120932s
+
