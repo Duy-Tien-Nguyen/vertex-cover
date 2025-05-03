@@ -127,3 +127,143 @@ LP Rounding: Graph: data/C500-9.txt, |C| = 499, time = 1.7174707s
 
 LP Rounding: Graph: data/C500-9.txt, |C| = 499, time = 1.665726259s
 
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/LP_Rounding-8                  1    18170308723 ns/op        90527672 B/op     903843 allocs/op
+PASS
+ok      vertex_cover    18.277s
+
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/LP_Rounding-8                  1    14542366485 ns/op        90254712 B/op     903823 allocs/op
+PASS
+ok      vertex_cover    14.609s
+
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/LP_Rounding-8                  1    14106707895 ns/op        90145528 B/op     903815 allocs/op
+PASS
+ok      vertex_cover    14.182s
+
+OPTIMAL LP SOLUTION FOUND
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/LP_Rounding-8                  1    14526272647 ns/op        89817976 B/op     903791 allocs/op
+PASS
+ok      vertex_cover    14.595s
+
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/LP_Rounding-8                  1    14796249352 ns/op        90746040 B/op     903859 allocs/op
+PASS
+ok      vertex_cover    14.863s
+Graph: C1000-9
+==================================================================
+hmem -count=5
+GLPK Simplex Optimizer 5.0
+112332 rows, 500 columns, 112332 non-zeros
+      0: obj =   0.000000000e+00 inf =   1.123e+05 (112332)
+    499: obj =   4.990000000e+02 inf =   0.000e+00 (0)
+Perturbing LP to avoid stalling [698]...
+Removing LP perturbation [998]...
+*   998: obj =   4.990000000e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/LP_Rounding-8                  1    1649703605 ns/op 22341448 B/op     225850 allocs/op
+BenchmarkSolver/LP_Rounding-8           GLPK Simplex Optimizer 5.0
+112332 rows, 500 columns, 112332 non-zeros
+      0: obj =   0.000000000e+00 inf =   1.123e+05 (112332)
+    499: obj =   4.990000000e+02 inf =   0.000e+00 (0)
+Perturbing LP to avoid stalling [698]...
+Removing LP perturbation [998]...
+*   998: obj =   4.990000000e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+       1        1577892080 ns/op        22232360 B/op  225843 allocs/op
+BenchmarkSolver/LP_Rounding-8           GLPK Simplex Optimizer 5.0
+112332 rows, 500 columns, 112332 non-zeros
+      0: obj =   0.000000000e+00 inf =   1.123e+05 (112332)
+    499: obj =   4.990000000e+02 inf =   0.000e+00 (0)
+Perturbing LP to avoid stalling [698]...
+Removing LP perturbation [998]...
+*   998: obj =   4.990000000e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+       1        1634585189 ns/op        22232280 B/op  225843 allocs/op
+BenchmarkSolver/LP_Rounding-8           GLPK Simplex Optimizer 5.0
+112332 rows, 500 columns, 112332 non-zeros
+      0: obj =   0.000000000e+00 inf =   1.123e+05 (112332)
+    499: obj =   4.990000000e+02 inf =   0.000e+00 (0)
+Perturbing LP to avoid stalling [698]...
+Removing LP perturbation [998]...
+*   998: obj =   4.990000000e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+       1        1489211974 ns/op        22778088 B/op  225881 allocs/op
+BenchmarkSolver/LP_Rounding-8           GLPK Simplex Optimizer 5.0
+112332 rows, 500 columns, 112332 non-zeros
+      0: obj =   0.000000000e+00 inf =   1.123e+05 (112332)
+    499: obj =   4.990000000e+02 inf =   0.000e+00 (0)
+Perturbing LP to avoid stalling [698]...
+Removing LP perturbation [998]...
+*   998: obj =   4.990000000e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+       1        1476157630 ns/op        22395960 B/op  225854 allocs/op
+PASS
+ok      vertex_cover    7.857s
+Graph:C500-9
+=============================================
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/LP_Rounding-8                  1     185414717 ns/op  5300808 B/op      56415 allocs/op
+PASS
+ok      vertex_cover    0.195s
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/LP_Rounding-8                  1     217293575 ns/op  5355400 B/op      56419 allocs/op
+PASS
+ok      vertex_cover    0.227s
+oos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/LP_Rounding-8                  1     209987625 ns/op  5410088 B/op      56424 allocs/op
+PASS
+ok      vertex_cover    0.222s
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/LP_Rounding-8                  1     212884120 ns/op  5410008 B/op      56424 allocs/op
+PASS
+ok      vertex_cover    0.223s
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/LP_Rounding-8                  1     185871985 ns/op  5410120 B/op      56425 allocs/op
+PASS
+ok      vertex_cover    0.196s
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/LP_Rounding-8                  1     206943537 ns/op  5191624 B/op      56407 allocs/op
+PASS
+ok      vertex_cover    0.219s
+Graph: C250-9
+=====================================

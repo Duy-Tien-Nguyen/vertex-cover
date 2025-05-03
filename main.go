@@ -1,5 +1,5 @@
-package main
-// package vc
+// package main
+package vc
 
 import (
     "vertex_cover/graph"

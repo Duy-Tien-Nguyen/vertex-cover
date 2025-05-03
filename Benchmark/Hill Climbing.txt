@@ -15,3 +15,45 @@ Hill Climbing: Graph: data/C500-9.txt, |C| = 498, time = 5.926959102s
 
 Hill Climbing: Graph: data/C500-9.txt, |C| = 498, time = 5.972244896s
 
+hmem -count=5
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Hill_Climbing-8                        1     23675329378 ns/op       21710428176 B/op      814163 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        1     16549544829 ns/op       14491603480 B/op      543374 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        1     25719395776 ns/op       21708626064 B/op      814018 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        1     25969271106 ns/op       21687173200 B/op      812465 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        1     25164041874 ns/op       21699946192 B/op      813385 allocs/op
+PASS
+ok      vertex_cover    117.145s
+Graph: C1000-9
+==============================================================
+hmem -count=5
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Hill_Climbing-8                        1     3325197252 ns/op        3605597624 B/op   141656 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        1     5254590537 ns/op        5397857424 B/op   211807 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        1     4593288219 ns/op        5394472240 B/op   211554 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        1     3091629903 ns/op        3605919080 B/op   141659 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        1     4818584352 ns/op        5401567760 B/op   212058 allocs/op
+PASS
+ok      vertex_cover    21.108s
+Graph:C500-9
+==========================================
+hmem -count=5
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Hill_Climbing-8                        2      902833786 ns/op        854327216 B/op     40714 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        1     1322362258 ns/op        1279528144 B/op    60852 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        2     1283048430 ns/op        1278082184 B/op    60753 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        1     1269914665 ns/op        1274997360 B/op    60524 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        2     1048457548 ns/op        1064988752 B/op    50644 allocs/op
+PASS
+ok      vertex_cover    11.682s
+Graph: C250-9
+==============================================

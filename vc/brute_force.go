@@ -1,4 +1,3 @@
-// package main
 package vc
 
 import (
@@ -72,25 +71,3 @@ func (s *BruteForceSolver) Solve(g *graph.Graph) ([]int, time.Duration) {
     }
     return result, duration
 }
-
-
-// func main() {
-//     path := flag.String("i", "", "Input edge list")
-//     flag.Parse()
-//     if *path == "" {
-//         fmt.Println("Usage: go run brute_force.go -i input.txt")
-//         return
-//     }
-
-//     g, err := graph.ParseEdgeList(*path)
-//     if err != nil {
-//         panic(err)
-//     }
-
-//     start := time.Now()
-//     cover := BruteForceVertexCover(g)
-//     dt := time.Since(start)
-
-//     fmt.Printf("BruteForce: |C| = %d, time = %s\n", cover.Count(), dt)
-//     fmt.Printf("Cover vertices: %v\n", cover)
-// }
