@@ -33,3 +33,44 @@ Cover vertices: [1 2 3 11 13 15 16]
 
 GeneticAlgorithm: Graph: data/johnson8-2-4.txt, |C| = 21, time = 17.019309697s
 
+GeneticAlgorithm: Graph: data/tree_graph_28.txt, |C| = 10, time = 586.791755ms
+
+GeneticAlgorithm: Graph: data/tree_graph_28.txt, |C| = 10, time = 645.446124ms
+
+GeneticAlgorithm: Graph: data/tree_graph_28.txt, |C| = 10, time = 610.522614ms
+
+GeneticAlgorithm: Graph: data/tree_graph_28.txt, |C| = 10, time = 624.677269ms
+
+GeneticAlgorithm: Graph: data/tree_graph_28.txt, |C| = 10, time = 594.644597ms
+
+GeneticAlgorithm: Graph: data/tree_graph_28.txt, |C| = 10, time = 562.300564ms
+
+GeneticAlgorithm: Graph: data/tree_graph_28.txt, |C| = 10, time = 621.015745ms
+
+GeneticAlgorithm: Graph: data/tree_graph_250.txt, |C| = 99, time = 1m17.111296378s
+
+GeneticAlgorithm: Graph: data/tree_graph_250.txt, |C| = 99, time = 1m13.626786754s
+
+GeneticAlgorithm: Graph: data/tree_graph_250.txt, |C| = 99, time = 1m3.740823455s
+
+GeneticAlgorithm: Graph: data/tree_graph_250.txt, |C| = 99, time = 1m13.220763566s
+
+GeneticAlgorithm: Graph: data/tree_graph_500.txt, |C| = 208, time = 8m53.641045167s
+
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/GeneticAlgorithm-8                     1     63017062840 ns/op       61405790528 B/op    38869554 allocs/op
+PASS
+ok      vertex_cover    63.023s
+duy@Laptop-Duy:~/vertex-cover$ go test -bench . -benchmem -benchtime 1x -timeout 60m
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/GeneticAlgorithm-8                     1     59802112561 ns/op       61422416680 B/op    38879816 allocs/op
+PASS
+ok      vertex_cover    59.809s
+Graph: tree_graph_250
+================================================

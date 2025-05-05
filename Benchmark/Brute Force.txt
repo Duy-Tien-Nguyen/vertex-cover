@@ -22,3 +22,29 @@ Cover vertices: [0 3 4 5 6 8 9 10 12 14 18 19]
 Brute Force: Graph: data/tree_graph.txt, |C| = 7, time = 3.625685901s
 Cover vertices: [0 1 3 7 8 11 16]
 
+Brute Force: Graph: data/johnson8-2-4.txt, |C| = 21, time = 8m41.569242699s
+
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Brute_Force-8                  1    513820942604 ns/op       120259640816 B/op       15032387864 allocs/op
+PASS
+ok      vertex_cover    513.827s
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Brute_Force-8                  1    390668183668 ns/op       120259438128 B/op       15032386066 allocs/op
+PASS
+ok      vertex_cover    390.673s
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Brute_Force-8                  2    633118047759 ns/op       120259852712 B/op       15032389669 allocs/op
+PASS
+ok      vertex_cover    1965.462s
+Graph: johnson8-5-2
+Brute Force: Graph: data/tree_graph_28.txt, |C| = 10, time = 6m34.833742706s
+

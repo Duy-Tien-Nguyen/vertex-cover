@@ -13,11 +13,16 @@ func main() {
     // graphName := "data/johnson8-2-4.txt"
     // graphName := "data/C250-9.txt"
     // graphName := "data/C500-9.txt"
-    graphName := "data/C1000-9.txt"
+    // graphName := "data/C1000-9.txt"
     // graphName := "data/C2000-9.txt"
     // graphName := "data/C4000-5.txt"
+    // graphName := "data/chesapeake.txt"
+    // graphName := "data/MANN-a9.txt"
+    // graphName := "data/tree_graph_1000.txt"
     // graphName := "data/tree_graph_10000.txt"
-    // graphName := "data/tree_graph.txt"
+    graphName := "data/tree_graph_28.txt"
+    // graphName := "data/tree_graph_250.txt"
+    // graphName := "data/tree_graph_500.txt"
     g, err := graph.ParseEdgeList(graphName)
     if err != nil {
         panic(err)
@@ -37,14 +42,14 @@ func main() {
         // &vc.BruteForceSolver{},
         // &vc.DynamicProgrammingSolver{},
         // &vc.FPTSolver{},
-        &vc.GreedySolver{},
-        &vc.PrimalDualSolver{},
-        &vc.MaxMatchingSolver{},
-        &vc.LP_RoundingSolver{},
-        &vc.MPA_Solver{},
+        // &vc.GreedySolver{},
+        // &vc.PrimalDualSolver{},
+        // &vc.MaxMatchingSolver{},
+        // &vc.LP_RoundingSolver{},
+        // &vc.MPA_Solver{},
         // &vc.ACO{},
-        // &vc.GASolver{},
-        &vc.HC_Solver{},
+        &vc.GASolver{},
+        // &vc.HC_Solver{},
     }  
     var wg sync.WaitGroup  
     for _, solver := range solvers {

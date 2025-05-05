@@ -18,3 +18,28 @@ Cover vertices: [0 1 2 3 4 5 6]
 
 ACO: Graph: data/johnson8-2-4.txt, |C| = 21, time = 1.819205445s
 
+ACO: Graph: data/tree_graph_28.txt, |C| = 10, time = 92.693428ms
+
+ACO: Graph: data/tree_graph_28.txt, |C| = 10, time = 100.800699ms
+
+ACO: Graph: data/tree_graph_28.txt, |C| = 10, time = 95.395879ms
+
+ACO: Graph: data/tree_graph_28.txt, |C| = 10, time = 96.807684ms
+
+ACO: Graph: data/tree_graph_28.txt, |C| = 10, time = 100.69481ms
+
+ACO: Graph: data/tree_graph_28.txt, |C| = 10, time = 87.312929ms
+
+ACO: Graph: data/tree_graph_28.txt, |C| = 10, time = 95.082417ms
+
+ACO: Graph: data/tree_graph_250.txt, |C| = 99, time = 12m21.815808893s
+
+
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/ACO-8                  1        480172247377 ns/op   52048236016 B/op        25659167 allocs/op
+PASS
+ok      vertex_cover    480.177s
+Graph: tree_graph_500

@@ -56,4 +56,73 @@ BenchmarkSolver/Hill_Climbing-8                        2     1048457548 ns/op   
 PASS
 ok      vertex_cover    11.682s
 Graph: C250-9
-==============================================
+==============================================Hill Climbing: Graph: data/tree_graph_28.txt, |C| = 11, time = 6.859605ms
+
+Hill Climbing: Graph: data/tree_graph_28.txt, |C| = 10, time = 4.119293ms
+
+Hill Climbing: Graph: data/tree_graph_28.txt, |C| = 11, time = 2.617126ms
+
+Hill Climbing: Graph: data/tree_graph_28.txt, |C| = 12, time = 2.391518ms
+
+Hill Climbing: Graph: data/tree_graph_28.txt, |C| = 10, time = 3.770393ms
+
+Hill Climbing: Graph: data/tree_graph_28.txt, |C| = 11, time = 1.748555ms
+
+Hill Climbing: Graph: data/tree_graph_28.txt, |C| = 11, time = 2.842741ms
+
+Hill Climbing: Graph: data/tree_graph_250.txt, |C| = 101, time = 163.464417ms
+
+Hill Climbing: Graph: data/tree_graph_250.txt, |C| = 108, time = 97.119123ms
+
+Hill Climbing: Graph: data/tree_graph_250.txt, |C| = 103, time = 131.126133ms
+
+Hill Climbing: Graph: data/tree_graph_250.txt, |C| = 100, time = 156.024074ms
+
+Hill Climbing: Graph: data/tree_graph_500.txt, |C| = 237, time = 172.182984ms
+
+Hill Climbing: Graph: data/tree_graph_500.txt, |C| = 233, time = 169.707784ms
+
+Hill Climbing: Graph: data/tree_graph_500.txt, |C| = 225, time = 214.651318ms
+
+Hill Climbing: Graph: data/tree_graph_500.txt, |C| = 217, time = 252.84093ms
+
+Hill Climbing: Graph: data/tree_graph_500.txt, |C| = 220, time = 245.1615ms
+
+Hill Climbing: Graph: data/tree_graph_500.txt, |C| = 221, time = 236.189892ms
+
+Hill Climbing: Graph: data/tree_graph_500.txt, |C| = 221, time = 232.642225ms
+
+Hill Climbing: Graph: data/tree_graph_500.txt, |C| = 223, time = 227.085355ms
+
+Hill Climbing: Graph: data/tree_graph_500.txt, |C| = 223, time = 223.379094ms
+
+Hill Climbing: Graph: data/tree_graph_500.txt, |C| = 224, time = 221.453505ms
+
+Hill Climbing: Graph: data/tree_graph_500.txt, |C| = 224, time = 227.158982ms
+
+Hill Climbing: Graph: data/tree_graph_500.txt, |C| = 223, time = 223.918598ms
+
+Hill Climbing: Graph: data/tree_graph_1000.txt, |C| = 441, time = 807.460342ms
+
+Hill Climbing: Graph: data/tree_graph_1000.txt, |C| = 447, time = 741.183263ms
+
+Hill Climbing: Graph: data/tree_graph_1000.txt, |C| = 437, time = 843.967795ms
+
+Hill Climbing: Graph: data/tree_graph_1000.txt, |C| = 463, time = 567.141401ms
+
+Hill Climbing: Graph: data/tree_graph_1000.txt, |C| = 442, time = 789.827706ms
+
+Hill Climbing: Graph: data/tree_graph_1000.txt, |C| = 437, time = 887.49086ms
+
+Hill Climbing: Graph: data/tree_graph_1000.txt, |C| = 436, time = 848.09554ms
+
+Hill Climbing: Graph: data/tree_graph_1000.txt, |C| = 441, time = 794.636624ms
+
+Hill Climbing: Graph: data/tree_graph_1000.txt, |C| = 440, time = 836.321151ms
+
+Hill Climbing: Graph: data/tree_graph_10000.txt, |C| = 4538, time = 1m2.186503256s
+
+Hill Climbing: Graph: data/tree_graph_10000.txt, |C| = 4899, time = 18.736797083s
+
+Hill Climbing: Graph: data/tree_graph_10000.txt, |C| = 4566, time = 1m5.201478582s
+

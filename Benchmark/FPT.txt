@@ -12,3 +12,110 @@ Cover vertices: [7 11 2 3 1 16 15]
 
 FPT: Graph: data/johnson8-2-4.txt, |C| = 21, time = 1m16.139120932s
 
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/FPT-8                  1        25849526857 ns/op    19720555152 B/op        853912559 allocs/op
+PASS
+ok      vertex_cover    25.858s
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/FPT-8                  1        20917170242 ns/op    19720538848 B/op        853912409 allocs/op
+PASS
+ok      vertex_cover    20.924s
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/FPT-8                  1        22470185269 ns/op    19720558096 B/op        853912514 allocs/op
+PASS
+ok      vertex_cover    22.478s
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/FPT-8                  1        25103110561 ns/op    19720571328 B/op        853912614 allocs/op
+PASS
+ok      vertex_cover    25.110s
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/FPT-8                  1        24276439573 ns/op    19720563792 B/op        853912542 allocs/op
+PASS
+ok      vertex_cover    24.285s
+Graph: johnson8-2-5
+===========================================
+FPT: Graph: data/tree_graph_28.txt, |C| = 10, time = 71.472µs
+
+FPT: Graph: data/chesapeake.txt, |C| = 22, time = 1m22.681008556s
+==========================================
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/FPT-8                  5           2993181 ns/op       402873 B/op       8459 allocs/op
+PASS
+ok      vertex_cover    0.027s
+Graph: tree_graph_250
+============================================
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/FPT-8                  5        8535488363 ns/op     263776697 B/op    521081 allocs/op
+PASS
+ok      vertex_cover    51.097s
+Graph: tree_graph_10000
+===========================================
+FPT: Graph: data/tree_graph_500.txt, |C| = 208, time = 18.272735ms
+
+FPT: Graph: data/tree_graph_500.txt, |C| = 208, time = 17.942015ms
+
+FPT: Graph: data/tree_graph_500.txt, |C| = 208, time = 17.033071ms
+
+FPT: Graph: data/tree_graph_500.txt, |C| = 208, time = 19.465687ms
+
+FPT: Graph: data/tree_graph_500.txt, |C| = 208, time = 18.173766ms
+
+FPT: Graph: data/tree_graph_500.txt, |C| = 208, time = 15.649408ms
+
+FPT: Graph: data/tree_graph_500.txt, |C| = 208, time = 16.497627ms
+
+FPT: Graph: data/tree_graph_500.txt, |C| = 208, time = 18.879016ms
+
+FPT: Graph: data/tree_graph_500.txt, |C| = 208, time = 16.212635ms
+
+FPT: Graph: data/tree_graph_500.txt, |C| = 208, time = 18.555289ms
+
+FPT: Graph: data/tree_graph_500.txt, |C| = 208, time = 18.054277ms
+
+FPT: Graph: data/tree_graph_500.txt, |C| = 208, time = 16.457938ms
+
+FPT: Graph: data/tree_graph_1000.txt, |C| = 405, time = 65.166729ms
+
+FPT: Graph: data/tree_graph_1000.txt, |C| = 405, time = 61.071762ms
+
+FPT: Graph: data/tree_graph_1000.txt, |C| = 405, time = 60.82389ms
+
+FPT: Graph: data/tree_graph_1000.txt, |C| = 405, time = 57.056218ms
+
+FPT: Graph: data/tree_graph_1000.txt, |C| = 405, time = 65.382846ms
+
+FPT: Graph: data/tree_graph_1000.txt, |C| = 405, time = 72.660463ms
+
+FPT: Graph: data/tree_graph_1000.txt, |C| = 405, time = 62.701486ms
+
+FPT: Graph: data/tree_graph_1000.txt, |C| = 405, time = 58.202239ms
+
+FPT: Graph: data/tree_graph_1000.txt, |C| = 405, time = 60.83227ms
+
+FPT: Graph: data/tree_graph_10000.txt, |C| = 4047, time = 10.979004503s
+
+FPT: Graph: data/tree_graph_10000.txt, |C| = 4047, time = 11.872515233s
+
+FPT: Graph: data/tree_graph_10000.txt, |C| = 4047, time = 14.303981736s
+

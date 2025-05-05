@@ -6,14 +6,12 @@ import (
 	"vertex_cover/graph"
 )
 
-// GASolver implements a genetic algorithm for Vertex Cover
-// including local search (greedy remove + memetic bit-flip)
 type GASolver struct {
-	PopSize     int     // population size
-	Generations int     // max generations
-	TournamentK int     // tournament size for selection
-	Pcrossover  float64 // crossover probability
-	Pmutation   float64 // mutation probability
+	PopSize     int     
+	Generations int     
+	TournamentK int     
+	Pcrossover  float64 
+	Pmutation   float64 
 }
 
 func (g *GASolver) Name() string { return "GeneticAlgorithm" }

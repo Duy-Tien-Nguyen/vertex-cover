@@ -69,4 +69,101 @@ BenchmarkSolver/Greedy-8                       3     338044198 ns/op 358144938 B
 PASS
 ok      vertex_cover    11.775s
 Graph:C250-9
-================================================
+================================================Greedy: Graph: data/tree_graph_28.txt, |C| = 11, time = 21.899µs
+
+Greedy: Graph: data/tree_graph_28.txt, |C| = 11, time = 24.321µs
+
+Greedy: Graph: data/tree_graph_28.txt, |C| = 11, time = 28.458µs
+
+Greedy: Graph: data/tree_graph_28.txt, |C| = 11, time = 37.053µs
+
+Greedy: Graph: data/tree_graph_28.txt, |C| = 11, time = 33.149µs
+
+Greedy: Graph: data/tree_graph_28.txt, |C| = 11, time = 30.709µs
+
+Greedy: Graph: data/tree_graph_28.txt, |C| = 11, time = 33.553µs
+
+Greedy: Graph: data/tree_graph_250.txt, |C| = 101, time = 2.259081ms
+
+Greedy: Graph: data/tree_graph_250.txt, |C| = 101, time = 1.724098ms
+
+Greedy: Graph: data/tree_graph_250.txt, |C| = 101, time = 10.991825ms
+
+Greedy: Graph: data/tree_graph_250.txt, |C| = 101, time = 2.359245ms
+
+Greedy: Graph: data/tree_graph_250.txt, |C| = 101, time = 8.848658ms
+
+Greedy: Graph: data/tree_graph_250.txt, |C| = 101, time = 20.384293ms
+
+Greedy: Graph: data/tree_graph_250.txt, |C| = 101, time = 5.219905ms
+
+Greedy: Graph: data/tree_graph_250.txt, |C| = 101, time = 9.529923ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 7.553495ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 11.911658ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 12.171051ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 11.702492ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 13.814409ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 13.411434ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 11.627334ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 9.565399ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 15.32399ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 12.388854ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 13.385724ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 10.298244ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 11.397125ms
+
+Greedy: Graph: data/tree_graph_500.txt, |C| = 215, time = 13.367591ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 44.048928ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 42.510578ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 41.063873ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 36.904946ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 42.152841ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 33.992778ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 41.080042ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 47.885778ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 35.154978ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 36.68022ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 33.723916ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 33.618376ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 36.045603ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 40.947439ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 37.671797ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 29.727348ms
+
+Greedy: Graph: data/tree_graph_1000.txt, |C| = 423, time = 34.578896ms
+
+Greedy: Graph: data/tree_graph_10000.txt, |C| = 4150, time = 3.129756192s
+
+Greedy: Graph: data/tree_graph_10000.txt, |C| = 4150, time = 3.37452818s
+
+Greedy: Graph: data/tree_graph_10000.txt, |C| = 4150, time = 4.294075007s
+

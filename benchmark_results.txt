@@ -44,3 +44,299 @@ PASS
 ok      vertex_cover    0.007s
 Graph: jonhson8-5-2
 =======================================
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Dynamic_Programming-8                  5           3393 ns/op            2377 B/op         39 allocs/op
+BenchmarkSolver/FPT-8                                  5          42239 ns/op           24464 B/op        701 allocs/op
+BenchmarkSolver/Greedy-8                               5          17938 ns/op           11304 B/op        103 allocs/op
+BenchmarkSolver/Primal-Dual-8                          5          17572 ns/op           11936 B/op         81 allocs/op
+BenchmarkSolver/Max_Matching-8                         5          12450 ns/op            3824 B/op         43 allocs/op
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+BenchmarkSolver/LP_Rounding-8                   GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+       5            194646 ns/op           10033 B/op      98 allocs/op
+BenchmarkSolver/MPA-8                                  5         138473 ns/op           30747 B/op        291 allocs/op
+BenchmarkSolver/ACO-8                                  5       58197039 ns/op        21543022 B/op     103206 allocs/op
+BenchmarkSolver/GeneticAlgorithm-8                     5      479624941 ns/op        490713942 B/op   2274899 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        5        1609180 ns/op         1089348 B/op       5845 allocs/op
+PASS
+ok      vertex_cover    3.258s
+Graph: tree_graph_28
+===========================================
+
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Dynamic_Programming-8                  5           7089 ns/op            2377 B/op         39 allocs/op
+BenchmarkSolver/FPT-8                                  5          65027 ns/op           24464 B/op        701 allocs/op
+BenchmarkSolver/Greedy-8                               5          21103 ns/op           11304 B/op        103 allocs/op
+BenchmarkSolver/Primal-Dual-8                          5          19903 ns/op           11936 B/op         81 allocs/op
+BenchmarkSolver/Max_Matching-8                         5          16457 ns/op            3824 B/op         43 allocs/op
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+BenchmarkSolver/LP_Rounding-8                   GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+       5            260867 ns/op           10033 B/op      98 allocs/op
+BenchmarkSolver/MPA-8                                  5         220486 ns/op           32960 B/op        334 allocs/op
+BenchmarkSolver/ACO-8                                  5       63920391 ns/op        21552590 B/op     103246 allocs/op
+BenchmarkSolver/GeneticAlgorithm-8                     5      562066104 ns/op        490675204 B/op   2274737 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        5        1151649 ns/op          990721 B/op       5318 allocs/op
+PASS
+ok      vertex_cover    3.835s
+Graph: tree_graph_28
+=======================================
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Dynamic_Programming-8                  5           7089 ns/op            2377 B/op         39 allocs/op
+BenchmarkSolver/FPT-8                                  5          65027 ns/op           24464 B/op        701 allocs/op
+BenchmarkSolver/Greedy-8                               5          21103 ns/op           11304 B/op        103 allocs/op
+BenchmarkSolver/Primal-Dual-8                          5          19903 ns/op           11936 B/op         81 allocs/op
+BenchmarkSolver/Max_Matching-8                         5          16457 ns/op            3824 B/op         43 allocs/op
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+BenchmarkSolver/LP_Rounding-8                   GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+27 rows, 28 columns, 27 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.700e+01 (27)
+     27: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+*    54: obj =   2.700000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+       5            260867 ns/op           10033 B/op      98 allocs/op
+BenchmarkSolver/MPA-8                                  5         220486 ns/op           32960 B/op        334 allocs/op
+BenchmarkSolver/ACO-8                                  5       63920391 ns/op        21552590 B/op     103246 allocs/op
+BenchmarkSolver/GeneticAlgorithm-8                     5      562066104 ns/op        490675204 B/op   2274737 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        5        1151649 ns/op          990721 B/op       5318 allocs/op
+PASS
+ok      vertex_cover    3.835s
+duy@Laptop-Duy:~/vertex-cover$ go test -bench . -benchmem -benchtime 5x -timeout 120m
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Dynamic_Programming-8                  5          19691 ns/op           20728 B/op        264 allocs/op
+BenchmarkSolver/FPT-8                                  5        2806241 ns/op          402873 B/op       8459 allocs/op
+BenchmarkSolver/Greedy-8                               5        1400200 ns/op         1097875 B/op       1771 allocs/op
+BenchmarkSolver/Primal-Dual-8                          5         251546 ns/op          170980 B/op        358 allocs/op
+BenchmarkSolver/Max_Matching-8                         5         374348 ns/op           47793 B/op        279 allocs/op
+GLPK Simplex Optimizer 5.0
+249 rows, 250 columns, 249 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.490e+02 (249)
+    249: obj =   2.490000000e+02 inf =   0.000e+00 (0)
+Perturbing LP to avoid stalling [448]...
+Removing LP perturbation [498]...
+*   498: obj =   2.490000000e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+BenchmarkSolver/LP_Rounding-8                   GLPK Simplex Optimizer 5.0
+249 rows, 250 columns, 249 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.490e+02 (249)
+    249: obj =   2.490000000e+02 inf =   0.000e+00 (0)
+Perturbing LP to avoid stalling [448]...
+Removing LP perturbation [498]...
+*   498: obj =   2.490000000e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+249 rows, 250 columns, 249 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.490e+02 (249)
+    249: obj =   2.490000000e+02 inf =   0.000e+00 (0)
+Perturbing LP to avoid stalling [448]...
+Removing LP perturbation [498]...
+*   498: obj =   2.490000000e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+249 rows, 250 columns, 249 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.490e+02 (249)
+    249: obj =   2.490000000e+02 inf =   0.000e+00 (0)
+Perturbing LP to avoid stalling [448]...
+Removing LP perturbation [498]...
+*   498: obj =   2.490000000e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+249 rows, 250 columns, 249 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.490e+02 (249)
+    249: obj =   2.490000000e+02 inf =   0.000e+00 (0)
+Perturbing LP to avoid stalling [448]...
+Removing LP perturbation [498]...
+*   498: obj =   2.490000000e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Simplex Optimizer 5.0
+249 rows, 250 columns, 249 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.490e+02 (249)
+    249: obj =   2.490000000e+02 inf =   0.000e+00 (0)
+Perturbing LP to avoid stalling [448]...
+Removing LP perturbation [498]...
+*   498: obj =   2.490000000e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+       5           3061790 ns/op           60464 B/op     775 allocs/op
+BenchmarkSolver/MPA-8                                  5        1871730 ns/op          459969 B/op       1902 allocs/op
+Graph: tree_graph_250
+=======================================================
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Dynamic_Programming-8                  5          56792 ns/op           41440 B/op        515 allocs/op
+BenchmarkSolver/FPT-8                                  5       12251105 ns/op         1083651 B/op      18254 allocs/op
+BenchmarkSolver/Greedy-8                               5        5858170 ns/op         4674107 B/op       4375 allocs/op
+BenchmarkSolver/Primal-Dual-8                          5         464601 ns/op          344585 B/op        623 allocs/op
+BenchmarkSolver/Max_Matching-8                         5        1759422 ns/op           96473 B/op        533 allocs/op
+BenchmarkSolver/MPA-8                                  5        3579717 ns/op         1108699 B/op       3402 allocs/op
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Dynamic_Programming-8                  5          53257 ns/op           41440 B/op        515 allocs/op
+BenchmarkSolver/FPT-8                                  5       10045225 ns/op         1083648 B/op      18254 allocs/op
+BenchmarkSolver/Greedy-8                               5        5064407 ns/op         4673006 B/op       4374 allocs/op
+BenchmarkSolver/Primal-Dual-8                          5         308736 ns/op          344585 B/op        623 allocs/op
+BenchmarkSolver/Max_Matching-8                         5        1361950 ns/op           96473 B/op        533 allocs/op
+BenchmarkSolver/MPA-8                                  5        2727153 ns/op         1079040 B/op       3289 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        5      192371631 ns/op        234628299 B/op     90677 allocs/op
+PASS
+ok      vertex_cover    1.395s
+Graph: tree_graph_500
+==================================================
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Dynamic_Programming-8                  5          53257 ns/op           41440 B/op        515 allocs/op
+BenchmarkSolver/FPT-8                                  5       10045225 ns/op         1083648 B/op      18254 allocs/op
+BenchmarkSolver/Greedy-8                               5        5064407 ns/op         4673006 B/op       4374 allocs/op
+BenchmarkSolver/Primal-Dual-8                          5         308736 ns/op          344585 B/op        623 allocs/op
+BenchmarkSolver/Max_Matching-8                         5        1361950 ns/op           96473 B/op        533 allocs/op
+BenchmarkSolver/MPA-8                                  5        2727153 ns/op         1079040 B/op       3289 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        5      192371631 ns/op        234628299 B/op     90677 allocs/op
+OPTIMAL LP SOLUTION FOUND
+       5          10076702 ns/op          116264 B/op    1528 allocs/op
+PASS
+ok      vertex_cover    1.395s
+Graph: tree_graph_500
+====================================================
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Dynamic_Programming-8                  5          75414 ns/op           81544 B/op       1016 allocs/op
+BenchmarkSolver/FPT-8                                  5       38636929 ns/op         3060539 B/op      37290 allocs/op
+BenchmarkSolver/Greedy-8                               5       18980875 ns/op        18318380 B/op       9900 allocs/op
+BenchmarkSolver/Primal-Dual-8                          5         666665 ns/op          744161 B/op       1156 allocs/op
+BenchmarkSolver/Max_Matching-8                         5        6355302 ns/op          193137 B/op       1040 allocs/op
+OPTIMAL LP SOLUTION FOUND
+       5          43384323 ns/op          245632 B/op    3035 allocs/op
+BenchmarkSolver/MPA-8                                  5        6634749 ns/op         2458062 B/op       5273 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        5      973093332 ns/op        1115322115 B/op   239740 allocs/op
+PASS
+ok      vertex_cover    6.516s
+Graph: tree_graph_1000
+==================================================
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Dynamic_Programming-8                  5         779526 ns/op          850628 B/op      10022 allocs/op
+BenchmarkSolver/FPT-8                                  5     5304610000 ns/op        263783171 B/op    521082 allocs/op
+BenchmarkSolver/Greedy-8                               5     1990888648 ns/op        2073718075 B/op   211774 allocs/op
+BenchmarkSolver/Primal-Dual-8                          5       13490358 ns/op         6901950 B/op      10503 allocs/op
+BenchmarkSolver/Max_Matching-8                         5      546536344 ns/op         1635515 B/op      10130 allocs/op
+OPTIMAL LP SOLUTION FOUND
+       5        3015411013 ns/op         2376585 B/op   30101 allocs/op
+BenchmarkSolver/MPA-8                                  5       66255915 ns/op        42789443 B/op      33851 allocs/op
+BenchmarkSolver/Hill_Climbing-8                        5     45208131967 ns/op       46156127404 B/op     2973055 allocs/op
+PASS
+ok      vertex_cover    331.048s
+Graph: tree_graph_10000
+===========================================================

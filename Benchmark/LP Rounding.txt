@@ -266,4 +266,67 @@ BenchmarkSolver/LP_Rounding-8                  1     206943537 ns/op  5191624 B/
 PASS
 ok      vertex_cover    0.219s
 Graph: C250-9
-=====================================
+=====================================LP Rounding: Graph: data/tree_graph_28.txt, |C| = 27, time = 9.130908ms
+
+LP Rounding: Graph: data/tree_graph_28.txt, |C| = 27, time = 603.945µs
+
+LP Rounding: Graph: data/tree_graph_28.txt, |C| = 27, time = 320.41µs
+
+LP Rounding: Graph: data/tree_graph_28.txt, |C| = 27, time = 323.247µs
+
+LP Rounding: Graph: data/tree_graph_28.txt, |C| = 27, time = 472.947µs
+
+LP Rounding: Graph: data/tree_graph_28.txt, |C| = 27, time = 336.803µs
+
+LP Rounding: Graph: data/tree_graph_28.txt, |C| = 27, time = 2.807257ms
+
+LP Rounding: Graph: data/tree_graph_250.txt, |C| = 249, time = 5.364709ms
+
+LP Rounding: Graph: data/tree_graph_250.txt, |C| = 249, time = 10.329805ms
+
+LP Rounding: Graph: data/tree_graph_500.txt, |C| = 499, time = 13.591668ms
+
+LP Rounding: Graph: data/tree_graph_500.txt, |C| = 499, time = 14.637345ms
+
+LP Rounding: Graph: data/tree_graph_500.txt, |C| = 499, time = 14.660723ms
+
+LP Rounding: Graph: data/tree_graph_500.txt, |C| = 499, time = 13.756168ms
+
+LP Rounding: Graph: data/tree_graph_500.txt, |C| = 499, time = 10.79013ms
+
+LP Rounding: Graph: data/tree_graph_500.txt, |C| = 499, time = 10.953706ms
+
+LP Rounding: Graph: data/tree_graph_500.txt, |C| = 499, time = 13.711373ms
+
+LP Rounding: Graph: data/tree_graph_500.txt, |C| = 499, time = 13.11461ms
+
+LP Rounding: Graph: data/tree_graph_500.txt, |C| = 499, time = 14.454481ms
+
+LP Rounding: Graph: data/tree_graph_500.txt, |C| = 499, time = 13.035241ms
+
+LP Rounding: Graph: data/tree_graph_1000.txt, |C| = 999, time = 47.067167ms
+
+LP Rounding: Graph: data/tree_graph_1000.txt, |C| = 999, time = 37.812337ms
+
+LP Rounding: Graph: data/tree_graph_1000.txt, |C| = 999, time = 39.977008ms
+
+LP Rounding: Graph: data/tree_graph_1000.txt, |C| = 999, time = 29.529099ms
+
+LP Rounding: Graph: data/tree_graph_1000.txt, |C| = 999, time = 30.421156ms
+
+LP Rounding: Graph: data/tree_graph_1000.txt, |C| = 999, time = 30.537836ms
+
+LP Rounding: Graph: data/tree_graph_1000.txt, |C| = 999, time = 33.411806ms
+
+LP Rounding: Graph: data/tree_graph_1000.txt, |C| = 999, time = 30.821404ms
+
+LP Rounding: Graph: data/tree_graph_1000.txt, |C| = 999, time = 30.246328ms
+
+LP Rounding: Graph: data/tree_graph_10000.txt, |C| = 9999, time = 2.908812204s
+
+LP Rounding: Graph: data/tree_graph_10000.txt, |C| = 9999, time = 2.946471728s
+
+LP Rounding: Graph: data/tree_graph_10000.txt, |C| = 9999, time = 2.943269559s
+
+LP Rounding: Graph: data/tree_graph_10000.txt, |C| = 9999, time = 2.989657265s
+

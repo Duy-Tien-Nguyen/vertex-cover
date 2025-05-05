@@ -68,3 +68,119 @@ PASS
 ok      vertex_cover    6.303s 
 Graph: C250-9
 =================================================
+Primal-Dual: Graph: data/tree_graph_28.txt, |C| = 18, time = 24.275µs
+
+Primal-Dual: Graph: data/tree_graph_28.txt, |C| = 18, time = 66.33µs
+
+Primal-Dual: Graph: data/tree_graph_28.txt, |C| = 18, time = 42.067µs
+
+Primal-Dual: Graph: data/tree_graph_28.txt, |C| = 18, time = 31.567µs
+
+Primal-Dual: Graph: data/tree_graph_28.txt, |C| = 18, time = 47.799µs
+
+Primal-Dual: Graph: data/tree_graph_28.txt, |C| = 18, time = 27.511µs
+
+Primal-Dual: Graph: data/tree_graph_28.txt, |C| = 18, time = 34.275µs
+
+Primal-Dual: Graph: data/tree_graph_250.txt, |C| = 166, time = 190.687µs
+
+Primal-Dual: Graph: data/tree_graph_250.txt, |C| = 166, time = 265.577µs
+
+Primal-Dual: Graph: data/tree_graph_250.txt, |C| = 166, time = 975.081µs
+
+Primal-Dual: Graph: data/tree_graph_250.txt, |C| = 166, time = 268.354µs
+
+Primal-Dual: Graph: data/tree_graph_250.txt, |C| = 166, time = 1.092483ms
+
+Primal-Dual: Graph: data/tree_graph_250.txt, |C| = 166, time = 1.587708ms
+
+Primal-Dual: Graph: data/tree_graph_250.txt, |C| = 166, time = 1.555558ms
+
+Primal-Dual: Graph: data/tree_graph_250.txt, |C| = 166, time = 867.385µs
+
+Primal-Dual: Graph: data/tree_graph_250.txt, |C| = 166, time = 313.386µs
+
+Primal-Dual: Graph: data/tree_graph_250.txt, |C| = 166, time = 262.799µs
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 731.39µs
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 2.075394ms
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 1.006877ms
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 1.241975ms
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 662.862µs
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 4.056756ms
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 603.099µs
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 388.678µs
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 240.025µs
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 403.08µs
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 738.285µs
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 993.413µs
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 557.316µs
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 1.193933ms
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 1.497076ms
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 618.377µs
+
+Primal-Dual: Graph: data/tree_graph_500.txt, |C| = 360, time = 486.221µs
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 1.614236ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 3.889529ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 4.373076ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 5.953777ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 6.130245ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 2.526373ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 4.353411ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 7.934715ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 3.401969ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 5.614248ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 1.491964ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 537.513µs
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 3.131618ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 2.242671ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 2.599955ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 6.580751ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 2.328642ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 5.291263ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 3.393026ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 1.680861ms
+
+Primal-Dual: Graph: data/tree_graph_1000.txt, |C| = 678, time = 5.347372ms
+
+Primal-Dual: Graph: data/tree_graph_10000.txt, |C| = 6640, time = 51.099925ms
+
+Primal-Dual: Graph: data/tree_graph_10000.txt, |C| = 6640, time = 30.271258ms
+
+Primal-Dual: Graph: data/tree_graph_10000.txt, |C| = 6640, time = 18.592583ms
+

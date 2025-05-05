@@ -162,3 +162,103 @@ PASS
 ok      vertex_cover    0.833s
 Graph: C250-9
 =============================================
+MPA: Graph: data/tree_graph_28.txt, |C| = 14, time = 2.014355ms
+
+MPA: Graph: data/tree_graph_28.txt, |C| = 15, time = 84.522µs
+
+MPA: Graph: data/tree_graph_28.txt, |C| = 11, time = 60.958µs
+
+MPA: Graph: data/tree_graph_28.txt, |C| = 12, time = 193.114µs
+
+MPA: Graph: data/tree_graph_28.txt, |C| = 12, time = 73.493µs
+
+MPA: Graph: data/tree_graph_28.txt, |C| = 12, time = 70.795µs
+
+MPA: Graph: data/tree_graph_28.txt, |C| = 11, time = 74.079µs
+
+MPA: Graph: data/tree_graph_250.txt, |C| = 128, time = 4.391149ms
+
+MPA: Graph: data/tree_graph_250.txt, |C| = 129, time = 11.854959ms
+
+MPA: Graph: data/tree_graph_250.txt, |C| = 131, time = 16.19218ms
+
+MPA: Graph: data/tree_graph_250.txt, |C| = 133, time = 8.21388ms
+
+MPA: Graph: data/tree_graph_250.txt, |C| = 136, time = 4.776726ms
+
+MPA: Graph: data/tree_graph_250.txt, |C| = 128, time = 1.594237ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 270, time = 5.618288ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 258, time = 9.455912ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 261, time = 6.432027ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 264, time = 8.244354ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 257, time = 7.73456ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 254, time = 5.974424ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 270, time = 5.50502ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 268, time = 7.191459ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 262, time = 13.270396ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 257, time = 8.207382ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 254, time = 9.349513ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 269, time = 6.533194ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 267, time = 7.72177ms
+
+MPA: Graph: data/tree_graph_500.txt, |C| = 265, time = 9.662321ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 517, time = 21.103036ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 517, time = 15.340518ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 519, time = 19.352918ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 528, time = 20.807458ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 532, time = 21.64233ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 530, time = 16.868371ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 534, time = 19.783298ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 518, time = 20.527976ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 526, time = 18.195308ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 524, time = 18.592227ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 528, time = 13.82615ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 512, time = 20.533527ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 520, time = 12.70247ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 522, time = 16.493235ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 518, time = 14.350293ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 528, time = 13.316755ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 527, time = 16.088167ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 524, time = 13.293412ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 515, time = 14.792604ms
+
+MPA: Graph: data/tree_graph_1000.txt, |C| = 507, time = 14.788134ms
+
+MPA: Graph: data/tree_graph_10000.txt, |C| = 5174, time = 206.654144ms
+
+MPA: Graph: data/tree_graph_10000.txt, |C| = 5199, time = 186.87128ms
+
+MPA: Graph: data/tree_graph_10000.txt, |C| = 5239, time = 234.644549ms
+

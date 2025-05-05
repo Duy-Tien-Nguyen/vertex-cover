@@ -20,7 +20,7 @@ func isCover(mask *BitMask, g *graph.Graph) bool {
 }
 
 // BruteForceVertexCover thử tất cả subsets của {0..n-1}, trả về cover nhỏ nhất
-func BruteForceVertexCover(g *graph.Graph) *BitMask {
+func BruteForce(g *graph.Graph) *BitMask {
     n := g.N
     var bestCover *BitMask
     minSize := n+1
@@ -60,7 +60,7 @@ func (s *BruteForceSolver) Name() string {
 
 func (s *BruteForceSolver) Solve(g *graph.Graph) ([]int, time.Duration) {
     start := time.Now()
-    bm := BruteForceVertexCover(g)
+    bm := BruteForce(g)
     duration := time.Since(start)
 
     var result []int

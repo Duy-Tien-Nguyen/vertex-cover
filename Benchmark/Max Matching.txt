@@ -72,3 +72,107 @@ PASS
 ok      vertex_cover    7.881s
 Graph:C250-9
 ====================================================
+Max Matching: Graph: data/tree_graph_28.txt, |C| = 18, time = 24.087µs
+
+Max Matching: Graph: data/tree_graph_28.txt, |C| = 18, time = 14.354µs
+
+Max Matching: Graph: data/tree_graph_28.txt, |C| = 18, time = 69.001µs
+
+Max Matching: Graph: data/tree_graph_28.txt, |C| = 18, time = 29.543µs
+
+Max Matching: Graph: data/tree_graph_28.txt, |C| = 18, time = 77.552µs
+
+Max Matching: Graph: data/tree_graph_28.txt, |C| = 18, time = 15.334µs
+
+Max Matching: Graph: data/tree_graph_28.txt, |C| = 18, time = 18.59µs
+
+Max Matching: Graph: data/tree_graph_250.txt, |C| = 166, time = 606.618µs
+
+Max Matching: Graph: data/tree_graph_250.txt, |C| = 166, time = 954.431µs
+
+Max Matching: Graph: data/tree_graph_250.txt, |C| = 166, time = 599.263µs
+
+Max Matching: Graph: data/tree_graph_250.txt, |C| = 166, time = 542.733µs
+
+Max Matching: Graph: data/tree_graph_250.txt, |C| = 166, time = 495.802µs
+
+Max Matching: Graph: data/tree_graph_250.txt, |C| = 166, time = 599.445µs
+
+Max Matching: Graph: data/tree_graph_250.txt, |C| = 166, time = 515.938µs
+
+Max Matching: Graph: data/tree_graph_250.txt, |C| = 166, time = 497.509µs
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 1.977766ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 1.742528ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 3.075808ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 2.058064ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 4.081529ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 2.344626ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 2.708259ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 2.317184ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 7.930269ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 3.280974ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 4.251683ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 1.802307ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 2.209235ms
+
+Max Matching: Graph: data/tree_graph_500.txt, |C| = 360, time = 4.128634ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 12.524973ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 11.188876ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 11.386567ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 15.769613ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 18.137338ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 10.525078ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 13.034829ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 8.343413ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 10.390158ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 10.312799ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 9.0825ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 13.809419ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 11.684338ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 11.056949ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 9.285285ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 11.321107ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 14.035828ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 11.094259ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 9.802916ms
+
+Max Matching: Graph: data/tree_graph_1000.txt, |C| = 678, time = 10.295001ms
+
+Max Matching: Graph: data/tree_graph_10000.txt, |C| = 6640, time = 930.03088ms
+
+Max Matching: Graph: data/tree_graph_10000.txt, |C| = 6640, time = 952.737831ms
+
+Max Matching: Graph: data/tree_graph_10000.txt, |C| = 6640, time = 1.09366783s
+
