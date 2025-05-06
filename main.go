@@ -19,8 +19,8 @@ func main() {
     // graphName := "data/chesapeake.txt"
     // graphName := "data/MANN-a9.txt"
     // graphName := "data/tree_graph_1000.txt"
-    // graphName := "data/tree_graph_10000.txt"
-    graphName := "data/tree_graph_28.txt"
+    graphName := "data/tree_graph_10000.txt"
+    // graphName := "data/tree_graph_28.txt"
     // graphName := "data/tree_graph_250.txt"
     // graphName := "data/tree_graph_500.txt"
     g, err := graph.ParseEdgeList(graphName)
@@ -45,10 +45,10 @@ func main() {
         // &vc.GreedySolver{},
         // &vc.PrimalDualSolver{},
         // &vc.MaxMatchingSolver{},
-        // &vc.LP_RoundingSolver{},
+        &vc.LP_RoundingSolver{},
         // &vc.MPA_Solver{},
         // &vc.ACO{},
-        &vc.GASolver{},
+        // &vc.GASolver{},
         // &vc.HC_Solver{},
     }  
     var wg sync.WaitGroup  

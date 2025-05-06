@@ -3,7 +3,7 @@ package vc
 import ("vertex_cover/graph"
 	"github.com/lukpank/go-glpk/glpk"
 	 "log"
-	 "math/rand"
+     "fmt"
 	"time")
 
 type LP_RoundingSolver struct{}
@@ -15,7 +15,7 @@ func (s *LP_RoundingSolver) Solve(g *graph.Graph) ([]int, time.Duration) {
 	cover := LPRounding(g)
 	duration := time.Since(start)
 	result := make([]int, 0, len(cover))
-	for v := range cover {
+	for _, v := range cover {
 		result = append(result, v)
 	}
 	return result, duration
@@ -55,11 +55,11 @@ func LPRounding(G *graph.Graph) []int {
         log.Fatalf("GLPK Simplex failed: %v", err)
     }
     // 5) Randomized Rounding
-    rnd := rand.New(rand.NewSource(time.Now().UnixNano()))
     cover := make([]int, 0, n)
     for i := int(1); i <= int(n); i++ {
         xi := prob.ColPrim(i) // nghiệm xi ∈ [0,1]
-        if rnd.Float64() <= xi {
+        if xi >= 0.5 {
+            fmt.Println(xi)
             cover = append(cover, int(i-1)) // chuyển về 0-based
         }
     }

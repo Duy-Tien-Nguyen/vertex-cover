@@ -13,8 +13,8 @@ import (
 // var graphName = "data/tree_graph_10000.txt"
 // var graphName = "data/tree_graph_5000.txt"
 // var graphName = "data/tree_graph_28.txt"
-// var graphName = "data/tree_graph_250.txt"
-var graphName = "data/tree_graph_500.txt"
+var graphName = "data/tree_graph_250.txt"
+// var graphName = "data/tree_graph_500.txt"
 // var graphName = "data/tree_graph_1000.txt"
 
 var g, err = graph.ParseEdgeList(graphName)
@@ -33,9 +33,9 @@ func BenchmarkSolver(b *testing.B){
 		// &vc.MaxMatchingSolver{},
 		// &vc.LP_RoundingSolver{},
 		// &vc.MPA_Solver{},
-		&vc.ACO{},
+		// &vc.ACO{},
 		// &vc.GASolver{},
-		// &vc.HC_Solver{},
+		&vc.HC_Solver{},
 	}
 
 	for _, solver := range solvers {

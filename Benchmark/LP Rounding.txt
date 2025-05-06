@@ -330,3 +330,15 @@ LP Rounding: Graph: data/tree_graph_10000.txt, |C| = 9999, time = 2.943269559s
 
 LP Rounding: Graph: data/tree_graph_10000.txt, |C| = 9999, time = 2.989657265s
 
+LP Rounding: Graph: data/tree_graph_28.txt, |C| = 27, time = 2.174017ms
+
+LP Rounding: Graph: data/tree_graph_10000.txt, |C| = 9999, time = 2.844518973s
+
+LP Rounding: Graph: data/tree_graph_10000.txt, |C| = 9999, time = 2.87139688s
+
+LP Rounding: Graph: data/tree_graph_10000.txt, |C| = 9999, time = 3.003396049s
+
+LP Rounding: Graph: data/tree_graph_10000.txt, |C| = 9999, time = 2.955132225s
+
+LP Rounding: Graph: data/tree_graph_10000.txt, |C| = 9999, time = 2.879340519s
+

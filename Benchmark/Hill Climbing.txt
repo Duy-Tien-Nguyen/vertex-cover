@@ -126,3 +126,12 @@ Hill Climbing: Graph: data/tree_graph_10000.txt, |C| = 4899, time = 18.736797083
 
 Hill Climbing: Graph: data/tree_graph_10000.txt, |C| = 4566, time = 1m5.201478582s
 
+goos: linux
+goarch: amd64
+pkg: vertex_cover
+cpu: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+BenchmarkSolver/Hill_Climbing-8                        5          59246882 ns/op        73259145 B/op      50804 allocs/op
+PASS
+ok      vertex_cover    0.367s
+Grasph: tree_graph_250
+=============================================
