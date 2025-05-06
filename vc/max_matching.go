@@ -46,7 +46,6 @@ func maxMatchingVertexCover(G *graph.Graph) map[int]struct{} {
 						// Thêm cả hai đỉnh vào C
 						C[u] = struct{}{}
 						C[v] = struct{}{}
-						
 						// Đánh dấu tất cả các cạnh kề với u hoặc v là “đã xét”
 						for _, neighbor := range G.Adj[u] {
 							if u < neighbor {
@@ -71,7 +70,6 @@ func maxMatchingVertexCover(G *graph.Graph) map[int]struct{} {
 				break
 			}
 		}
-
 		allVisited := true
 		for _, visited := range visitedEdges {
 			if !visited {

@@ -47,7 +47,6 @@ func MPA(G *graph.Graph) []int {
 				S=append(S,e)
 			}
 		}
-
 		// Sử lí song song
 		wg.Add(len(S))
 		for _, e := range S {
@@ -65,7 +64,6 @@ func MPA(G *graph.Graph) []int {
 			}(e)
 		}
 		wg.Wait()
-
 		// Cập nhật E': loại bỏ cạnh mà cả hai đầu mút nằm trong cover
 		for v:=range newCover{
 			C[v]=true
@@ -78,7 +76,6 @@ func MPA(G *graph.Graph) []int {
 		}
 		remaining=newRemaining
 	}
-
 	// Chuyển đổi map sang slice
 	var cover []int
 	for v := range C {

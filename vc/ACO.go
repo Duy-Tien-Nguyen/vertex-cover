@@ -34,7 +34,6 @@ func runACO(G *graph.Graph, mAnts, maxIter int, tau0, rho, Q, alpha, beta float6
 	rand.Seed(time.Now().UnixNano())
 	n := G.N
 	edges := G.Edges()
-
 	// 1. Initialize pheromone and heuristic
 	tau := make([]float64, n)
 	theta := make([]float64, n)
@@ -42,24 +41,20 @@ func runACO(G *graph.Graph, mAnts, maxIter int, tau0, rho, Q, alpha, beta float6
 		tau[v] = tau0
 		theta[v] = float64(len(G.Adj[v]))
 	}
-
 	// bestCover = all vertices initially
 	bestMask := NewBitMask(n)
 	for v := 0; v < n; v++ {
 		bestMask.Set(v)
 	}
-
 	// 2. Main ACO loop
 	for iter := 0; iter < maxIter; iter++ {
 		// solutions and costs for this iteration
 		solutions := make([]*BitMask, mAnts)
 		costs := make([]int, mAnts)
-
 		for k := 0; k < mAnts; k++ {
 			// 2.1 build solution
 			coverMask := NewBitMask(n)
 			uncovered := append([]graph.Edge(nil), edges...)
-
 			for len(uncovered) > 0 {
 				// compute probabilities
 				f := make([]float64, n)
@@ -70,11 +65,9 @@ func runACO(G *graph.Graph, mAnts, maxIter int, tau0, rho, Q, alpha, beta float6
 						sumF += f[v]
 					}
 				}
-
 				// 2.2 select v*
 				vstar := rouletteSelect(f, sumF)
 				coverMask.Set(vstar)
-
 				// 2.3 remove incident edges
 				nextUn := uncovered[:0]
 				for _, e := range uncovered {
@@ -83,7 +76,6 @@ func runACO(G *graph.Graph, mAnts, maxIter int, tau0, rho, Q, alpha, beta float6
 					}
 				}
 				uncovered = nextUn
-
 				// 2.4 update heuristic
 				for v := 0; v < n; v++ {
 					d := 0
@@ -95,7 +87,6 @@ func runACO(G *graph.Graph, mAnts, maxIter int, tau0, rho, Q, alpha, beta float6
 					theta[v] = float64(d)
 				}
 			}
-
 			// record solution
 			solutions[k] = coverMask
 			costs[k] = coverMask.Count()
@@ -103,12 +94,10 @@ func runACO(G *graph.Graph, mAnts, maxIter int, tau0, rho, Q, alpha, beta float6
 				bestMask = coverMask.Clone()
 			}
 		}
-
 		// 2.5 pheromone evaporation
 		for v := 0; v < n; v++ {
 			tau[v] *= (1 - rho)
 		}
-
 		// 2.6 pheromone deposition by ants
 		for k := 0; k < mAnts; k++ {
 			delta := Q / float64(costs[k])
@@ -118,7 +107,6 @@ func runACO(G *graph.Graph, mAnts, maxIter int, tau0, rho, Q, alpha, beta float6
 				}
 			}
 		}
-
 		// 2.7 optional bestCover deposit
 		bestDelta := Q / float64(bestMask.Count())
 		for v := 0; v < n; v++ {
@@ -127,7 +115,6 @@ func runACO(G *graph.Graph, mAnts, maxIter int, tau0, rho, Q, alpha, beta float6
 			}
 		}
 	}
-
 	// return bestCover as slice
 	res := make([]int, 0, bestMask.Count())
 	for v := 0; v < n; v++ {
